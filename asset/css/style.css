@@ -1,0 +1,42 @@
+body {
+    background-image: url('../image/backgoundimg.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+}
+
+
+
+a {
+    text-decoration: none !important;
+}
+a, a:hover, a:visited, a:active {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+
+#body-login{
+    width: 100%;
+    height: 100%;
+    display: table;
+    text-align: center;
+
+
+}
+#login{
+    display: table-cell;
+    vertical-align: middle;
+}
+#login-footer{
+    clear: both;
+    position: relative;
+    height: 200px;
+    margin-top: -200px;
+}
+
+#body-login {
+    overflow: hidden; /* Hide scrollbars */
+}
