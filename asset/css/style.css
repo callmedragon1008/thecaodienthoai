@@ -40,3 +40,9 @@ a, a:hover, a:visited, a:active {
 #body-login {
     overflow: hidden; /* Hide scrollbars */
 }
+
+.carousel .carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+}
