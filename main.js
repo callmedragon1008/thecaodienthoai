@@ -8,9 +8,7 @@ btnLogin.addEventListener("click", (e) => {
   e.preventDefault();
   let user = {
     username: username.value,
-    email: email.value,
     password: password.value,
-    repassword: password.value,
   };
   let json = JSON.stringify(user);
   if (!username.value || !email.value || !password.value || !repassword.value) {
@@ -20,6 +18,6 @@ btnLogin.addEventListener("click", (e) => {
       alert("Mat khau khong khop");
     localStorage.setItem(username.value, json);
     alert("Dang ky thanh cong");
-    window.location.href="index.html";
+    window.location.href="login.html";
   }
 });
