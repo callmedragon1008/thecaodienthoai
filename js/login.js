@@ -21,7 +21,8 @@
 let btnLogin = document.querySelector('#js-login-button');
 let username = document.getElementById('form3Example3');
 let password = document.getElementById('form3Example4');
-
+let headerLogin=document.querySelectorAll('.header-account');
+let headerUser=document.querySelector('.header-user');
 btnLogin.addEventListener('click', (e) => {
   e.preventDefault();
   let user = {
@@ -42,6 +43,9 @@ btnLogin.addEventListener('click', (e) => {
       if (localStorage.getItem(username.value) == json) {
         alert("Dang nhap thanh cong");
         window.location.href = "index.html";
+        headerLogin.classList.add('disappear')
+        headerUser.classList.remove('disappear')
+        document.getElementsByClassName(header-user).innerText=username.value
       } else {
         alert("Dang nhap that bai");
       }
