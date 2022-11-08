@@ -1,3 +1,4 @@
+
 body {
     background-image: url('../image/backgoundimg.png');
     background-repeat: no-repeat;
@@ -94,11 +95,15 @@ a, a:hover, a:visited, a:active {
 }
 
 .product {
-    width: 45%;
-    display: flex;
-    justify-content:space-around;
-    align-items:center;
+    width: 70%;
+    /* display: flex; */
+    /* justify-content:space-around;
+    align-items:center; */
     padding: 10px 0;
     border-bottom:1px solid lightgrey;
 }
 
+.card-img-top {
+    height: 350px;
+    box-sizing: border-box;
+}
