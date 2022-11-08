@@ -34,21 +34,25 @@ let cart=JSON.parse(json)
 let sum=0
 for (let i=0;i<cart.length;i++){
     if (cart[i].inCart!=0){
+        cart[i].cost=cart[i].cost.replace('.','')
         var temp=parseInt(cart[i].inCart)*parseInt(cart[i].cost)
         sum=sum+temp
+        
+        temp=temp.toLocaleString();
         productContainer.innerHTML += `
         <div class="product products-container">
             <div class="products-header">
                 <span class="product-title">${cart[i].name}</span>
                 <span class="price" style="margin-left:20px;min-width:100px">${cart[i].cost}</span>
                 <span class="quantity" style="margin-left:30px;">${cart[i].inCart}</span>
-                <span class="total">${temp}.000<span>
+                <span class="total">${temp}đ<span>
             </div>
             `
     } 
 }
+sum=sum.toLocaleString();
 productTotal.innerHTML+=`
-            <span>${sum}.000đ<span>
+            <span>${sum}đ<span>
         `
 // let carts = document.querySelectorAll('.add-cart');
 // let products=[
