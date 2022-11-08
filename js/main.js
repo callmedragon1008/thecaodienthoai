@@ -66,7 +66,9 @@ for (let i=0;i<btnModals.length;i++){
     })
 }
 
+if (productFromStorage1!=null)
 for (let i=0;i<btnModals.length;i++){
+    
     if (productFromStorage1[i].inCart!=0)
         product[i].inCart=productFromStorage1[i].inCart;
 }
