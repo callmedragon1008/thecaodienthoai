@@ -40,13 +40,24 @@ for (let i=0;i<cart.length;i++){
         
         temp=temp.toLocaleString();
         productContainer.innerHTML += `
-        <div class="product products-container">
-            <div class="products-header">
-                <span class="product-title">${cart[i].name}</span>
-                <span class="price" style="margin-left:20px;min-width:100px">${cart[i].cost}</span>
-                <span class="quantity" style="margin-left:30px;">${cart[i].inCart}</span>
-                <span class="total">${temp}đ<span>
+        <div class="small-middle-container " style="text-align: center;margin-bottom: 1rem">
+        <div class="row">
+            <div class="col-3">
+                <span>${cart[i].name}</span>
             </div>
+            <div class="col-3">
+                <span>${cart[i].cost}</span>
+            </div>
+            <div class="col-3">
+                <span>${cart[i].inCart}</span>
+            </div>
+            <div class="col-3">
+                <span>${temp}đ<span>
+            </div>
+        </div>
+    </div>
+
+
             `
     } 
 }

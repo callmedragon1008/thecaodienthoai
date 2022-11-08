@@ -107,3 +107,5 @@ a, a:hover, a:visited, a:active {
     height: 350px;
     box-sizing: border-box;
 }
+.small-middle-container{ 
+    max-width: 600px; margin: auto;} 
