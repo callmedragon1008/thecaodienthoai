@@ -51,7 +51,7 @@ for (let i=0;i<cart.length;i++){
             <div class="col-3">
                 <span>${cart[i].inCart}</span>
             </div>
-            <div class="col-3">
+            <div class="col-3 d-flex justify-content-end">
                 <span>${temp}đ<span>
             </div>
         </div>
