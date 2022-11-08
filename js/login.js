@@ -2,7 +2,6 @@
 let btnLogin = document.querySelector('#js-login-button');
 let username = document.getElementById('form3Example3');
 let password = document.getElementById('form3Example4');
-const temp = 0
 btnLogin.addEventListener('click', (e) => {
   e.preventDefault();
   let user = {
@@ -17,9 +16,6 @@ btnLogin.addEventListener('click', (e) => {
   else{
     if (username.value=="admin"&&password.value=="123"){
       alert("Xin chao admin");
-      temp=1
-      let json = JSON.stringify(temp)
-      localStorage.setItem(temp, json)
       window.location.href = "admin.html"
     }
     else
@@ -27,7 +23,7 @@ btnLogin.addEventListener('click', (e) => {
         alert("Dang nhap thanh cong");
         localStorage.setItem('username1',username.value)
         localStorage.setItem('status',1)
-        localStorage.setItem('countCard',0)
+        localStorage.setItem('numberCart1',0)
         window.location.href = "index.html";
       } else {
         alert("Dang nhap that bai");

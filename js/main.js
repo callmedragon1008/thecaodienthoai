@@ -5,6 +5,22 @@ let cost=document.getElementsByClassName("card-text")
 let reduceCost=document.getElementsByClassName("reduce-cost")
 let type=[]
 let string=""
+let carts = document.querySelectorAll('.add-cart');
+let inCart=[]
+let productName=[]
+let productCost=[]
+let numberCart
+let product=[]
+let string1=''
+let string2=''
+let t=0
+let productFromStorage=localStorage.getItem('product')
+let productFromStorage1=JSON.parse(productFromStorage)
+let headerLogin=document.querySelector('.header-login')
+let headerUser=document.querySelector('.header-user-name')
+let headerLogout=document.querySelector('.header-log-out')
+let name1=localStorage.getItem('username1')
+let status1=localStorage.getItem('status')
 for (let i=0;i<btnModals.length;i++){
   string=cardName[2*i].innerText;
   type.push(string.slice(0,string.search(" ")))
@@ -16,11 +32,6 @@ for (let i=0;i<btnModals.length;i++){
   })
 }
 // header,login
-let headerLogin=document.querySelector('.header-login')
-let headerUser=document.querySelector('.header-user-name')
-let headerLogout=document.querySelector('.header-log-out')
-let name1=localStorage.getItem('username1')
-let status1=localStorage.getItem('status')
 if (status1==1){
     headerLogin.classList.add('disappear')
     headerUser.classList.remove('disappear')
@@ -28,29 +39,10 @@ if (status1==1){
     headerUser.innerHTML=`<a class="nav-link me-lg-3" href=""><i class="ti-user"></i>${name1}</a>`
 }
 
-headerLogout.addEventListener('click',function(){
-    localStorage.setItem('status',0)
-    localStorage.setItem('numberCart1',0)
-    headerLogin.classList.remove('disappear')
-    headerUser.classList.add('disappear')
-    headerLogout.classList.add('disappear')
-})
-// shopping cart
-let carts = document.querySelectorAll('.add-cart');
-let inCart=[]
-let productName=[]
-let productCost=[]
-let numberCart
-let product=[]
 
-// let cardName=document.getElementsByClassName("card-title")
-// let cost=document.getElementsByClassName("card-text")
-// let reduceCost=document.getElementsByClassName("reduce-cost")
-let string1=''
-let string2=''
-let t=0
-let productFromStorage=localStorage.getItem('product')
-let productFromStorage1=JSON.parse(productFromStorage)
+// shopping cart
+
+
 if (localStorage.getItem('numberCart1')!=undefined){
     numberCart=localStorage.getItem('numberCart1')
     document.querySelector('.cart span').innerText = numberCart;
@@ -68,7 +60,6 @@ for (let i=0;i<btnModals.length;i++){
 
 if (productFromStorage1!=null)
 for (let i=0;i<btnModals.length;i++){
-    
     if (productFromStorage1[i].inCart!=0)
         product[i].inCart=productFromStorage1[i].inCart;
 }
@@ -89,6 +80,19 @@ for (let i = 0; i < btnModals.length; i++) {
 numberCart=localStorage.getItem('numberCart1')
 document.querySelector('.cart span').innerText = numberCart;
 
+
+headerLogout.addEventListener('click',function(){
+    localStorage.setItem('status',0)
+    localStorage.setItem('numberCart1',0)
+    for (let i=0;i<btnModals.length;i++){
+        product[i].inCart=0
+    }
+    var json=JSON.stringify(product)
+    localStorage.setItem('product',json)
+    headerLogin.classList.remove('disappear')
+    headerUser.classList.add('disappear')
+    headerLogout.classList.add('disappear')
+})
 // localStorage.setItem('cardName',cardName)
 // localStorage.setItem('reduceCost',reduceCost)
 // let test=localStorage.getItem('cardName')
