@@ -15,7 +15,7 @@ let string1=''
 let string2=''
 let t=0
 let productFromStorage=localStorage.getItem('product')
-let productFromStorage1=JSON.parse(productFromStorage)
+// let productFromStorage1=JSON.parse(productFromStorage)
 let headerLogin=document.querySelector('.header-login')
 let headerUser=document.querySelector('.header-user-name')
 let headerLogout=document.querySelector('.header-log-out')
@@ -44,6 +44,8 @@ if (status1==1){
 
 if (localStorage.getItem('numberCart1')!=null)
     numberCart=localStorage.getItem('numberCart1')
+else   
+    localStorage.setItem('numberCart1',numberCart)
 document.querySelector('.cart span').innerText = numberCart;
 for (let i=0;i<btnModals.length;i++){
     string1=cardName[2*i].innerText
@@ -55,13 +57,15 @@ for (let i=0;i<btnModals.length;i++){
         inCart:0
     })
 }
-if (localStorage.getItem('product')==null)
-    localStorage.setItem('product',product)
-if (productFromStorage1!=null)
-for (let i=0;i<btnModals.length;i++){
-    if (productFromStorage1[i].inCart!=0)
-        product[i].inCart=productFromStorage1[i].inCart;
+if (localStorage.getItem('product')==null){
+    json=JSON.stringify(product)
+    localStorage.setItem('product',json)
 }
+// if (productFromStorage1!=null)
+// for (let i=0;i<btnModals.length;i++){
+//     if (productFromStorage1[i].inCart!=0)
+//         product[i].inCart=productFromStorage1[i].inCart;
+// }
 for (let i = 0; i < btnModals.length; i++) {
     carts[i].addEventListener('click',()=>{
     product[i].inCart++;

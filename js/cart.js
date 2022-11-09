@@ -31,6 +31,7 @@ let json=localStorage.getItem('product')
 let cart=JSON.parse(json)
 let sum=0
 let count=[]
+let dem=0
 for (let i=0;i<cart.length;i++){
     if (cart[i].inCart!=0){
         count.push(i)
@@ -39,7 +40,7 @@ for (let i=0;i<cart.length;i++){
         sum=sum+temp        
         temp=temp.toLocaleString();
         productContainer.innerHTML += `
-        <div class="small-middle-container" style="text-align: center;margin-bottom: 1rem">
+        <div class="small-middle-container" id="cart-child-${dem}" style="text-align: center;margin-bottom: 1rem">
         <div class="row">
             <div class="col-3">
                 <span>${cart[i].name}</span>
@@ -55,8 +56,10 @@ for (let i=0;i<cart.length;i++){
             <div class="col-3 d-flex justify-content-end">
                 <span class="sum-cart">${temp}đ<span>
             </div>
+            <button class="navbar-toggler delete" type="button" style="margin-right:20px;" >Xóa khỏi giỏ hàng</button>
         </div>
     </div>            `
+    dem++;
     } 
 }
 let sum1=sum.toLocaleString();
@@ -67,6 +70,27 @@ let btnMinus=document.querySelectorAll(".minus")
 let btnPlus=document.querySelectorAll(".plus")
 let cart1=document.querySelectorAll(".in-cart span")
 let sumCart=document.querySelectorAll(".sum-cart")
+let btnDeletes=document.querySelectorAll(".delete")
+for (let i=0;i<btnDeletes.length;i++)
+{
+    btnDeletes[i].addEventListener('click',function(){
+            var deleteChild=document.getElementById("cart-child-"+i)
+            numberCart=numberCart-cart[count[i]].inCart;
+            document.querySelector('.cart span').innerText = numberCart;
+            localStorage.setItem("numberCart1",numberCart)
+            temp=parseInt(cart[count[i]].cost)*parseInt(cart[count[i]].inCart)
+            sum=sum-temp
+            sum1=sum.toLocaleString();
+            productTotal.innerHTML=`
+            <span>${sum1}đ<span>
+        `
+            sumCart[i].innerText=temp
+            cart[count[i]].inCart=0
+            temp=JSON.stringify(cart)
+            localStorage.setItem("product",temp)
+            deleteChild.innerHTML=``
+    })
+}
 for (let i=0;i<btnMinus.length;i++)
 {
     btnMinus[i].addEventListener('click',function(){
