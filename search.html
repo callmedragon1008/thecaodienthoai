@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./asset/css/style.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link href="./asset/themify-icons/themify-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="./asset/fonts/remixicon.css">
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- header -->
+    <div id="header">
+        <nav class="navbar navbar-expand-lg bg-light navbar-light fixed-top shadow-sm mb" id="mainNav">
+            <div class="container-fluid px-5">
+                <a class="navbar-brand fw-bold" href="index.html">
+                    <img src="./asset/image/Untitled.png" alt="Logo" style="width:40px;" class="rounded-pill me-2">
+                    Shop Name
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="bi-list"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
+                        <li class="nav-item">
+                            <form class="d-flex me-lg-3">
+                                <input class="form-control me-2" type="text" placeholder="Find on website">
+                                <select class="form-select form-select-sm" style="width: 200px;margin-right: 14px;" aria-label=".form-select-sm example">
+                                    <option selected>Danh mục</option>
+                                    <option value="1">Viettel</option>
+                                    <option value="2">Vinaphone</option>
+                                    <option value="3">Mobifone</option>
+                                    <option value="4">Vietnamobile</option>
+                                    <option value="5">Dưới 100k</option>
+                                    <option value="6">100k-200k</option>
+                                    <option value="7">Trên 200k</option>
+                                </select>
+                                <button class="btn btn-primary" type="button">
+                                    <i class="ti-search"></i>
+                                </button>
+                            </form>
+                        </li>
+                        <li class="cart nav-item">
+                            <a class=" nav-link me-lg-3" href="./shopping-cart.html">
+                                <i class="ti-shopping-cart"></i>Shopping Cart (<span>0</span>)
+                            </a>
+                        </li>
+                        <li class="nav-item header-user-name disappear"></li>
+                        <li class="nav-item header-log-out disappear"><a class="nav-link me-lg-3" href="./index.html"><i class="ri-logout-box-line"></i> Đăng xuất</a></li>
+                        <!-- <li class="nav-item header-account"><a class="nav-link me-lg-3" href="./Register.html"><i class="ri-edit-2-line"></i> Đăng Ký</a></li> -->
+                        <li class="nav-item header-login"><a class="nav-link me-lg-3" href="./login.html"><i class="ri-login-box-line"></i> Đăng Nhập/Đăng Ký</a></li>
+                    </ul>
+                    <button class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" data-bs-toggle="modal" data-bs-target="#feedbackModal">
+                        <span class="d-flex align-items-center">
+                            <i class="ri-chat-3-fill me-2"></i>
+                            <span class="small">Gửi phản hồi</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Feedback Modal-->
+    <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-primary p-4">
+                    <h5 class="modal-title font-alt text-white" id="feedbackModalLabel">Gửi phản hồi</h5>
+                        <button class="btn-close btn-close-white" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body border-0 p-4">
+                    <!-- * * * * * * * * * * * * * * *-->
+                    <!-- * * SB Forms Contact Form * *-->
+                    <!-- * * * * * * * * * * * * * * *-->
+                    <!-- This form is pre-integrated with SB Forms.-->
+                    <!-- To make this form functional, sign up at-->
+                    <!-- https://startbootstrap.com/solution/contact-forms-->
+                    <!-- to get an API token!-->
+                    <form id="contactForm" data-sb-form-api-token="39d0759f-ccfc-458b-bef8-25abf452abd2">
+                        <!-- Name input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                            <label for="name">Họ và Tên</label>
+                            <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                        </div>
+                        <!-- Email address input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                            <label for="email">Địa chỉ email</label>
+                            <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                            <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                        </div>
+                        <!-- Phone number input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
+                            <label for="phone">Số điện thoại</label>
+                            <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                        </div>
+                        <!-- Message input-->
+                        <div class="form-floating mb-3">
+                            <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
+                            <label for="message">Phản hồi</label>
+                        <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                        </div>
+                        <!-- Submit success message-->
+                        <!---->
+                        <!-- This is what your users will see when the form-->
+                        <!-- has successfully submitted-->
+                        <div class="d-none" id="submitSuccessMessage">
+                            <div class="text-center mb-3">
+                                <div class="fw-bolder">Form submission successful!</div>
+                            </div>
+                        </div>
+                        <!-- Submit error message-->
+                        <!---->
+                        <!-- This is what your users will see when there is-->
+                        <!-- an error submitting the form-->
+                        <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                        <!-- Submit Button-->
+                        <div class="d-grid"><button class="btn btn-primary rounded-pill btn-lg" id="submitButton" type="submit">Submit</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="content" class="mb-5 pb-5">
+        Mashead header
+        <header class="masthead">
+            <div class="container pt-5">
+                <div class="row gx-5 align-items-center mt-5">
+                    <div class="col-lg-6">
+                        <!-- Mashead text and app badges-->
+                        <div class="mb-5 mb-lg-0 text-center text-lg-start">
+                            <h1 class="display-1 lh-1 mb-3"  id="thecao"><b style="font-weight: 900;">THẺ CÀO ĐIỆN THOẠI</b></h1>
+                            <div class="d-flex flex-column flex-lg-row align-items-center">
+                                <button class="btn btn-light rounded-pill px-3 mb-2 mb-lg-0">
+                                    <span class="d-flex align-items-center">
+                                        <span class="list-group-item list-group-item-action"><a href="#list-item-1"><b>Danh mục</b></a></span>
+                                    </span>
+                                </button>
+                                <div class="me-3"></div>
+                                <button class="btn btn-light rounded-pill px-3 mb-2 mb-lg-0">
+                                    <span class="d-flex align-items-center">
+                                        <span class="text-muted"><a href="./login.html">Ưu đãi</a></span>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <!-- Masthead device mockup feature-->
+                        <div class="d-flex justify-content-center">
+                            <img style="max-width: 100%; height: 100%" src="./asset/image/dang-ky-dai-ly-sim-the-dien-thoai-cac-nha-mang-di-dong-tai-viet-nam-removebg-preview.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- <h2 class="text-center mt-5 pt-5" id="list-item-1">Chọn loại thẻ</h2>
+        <div class="container mt-5 mb-5">
+            <div class="row"> 
+                <div class="col-sm-3">
+                    <button class="btn btn-light rounded-pill px-3 mb-2 mb-lg-0">
+                        <a href="./viettel.html"><img class="w-50" src="./asset/image/viettel/logo.png" alt=""></a>
+                    </button>
+                </div>
+                <div class="col-sm-3">
+                    <button class="btn btn-light rounded-pill px-3 mb-2 mb-lg-0">
+                        <a href="./mobifone.html"><img class="w-50" src="./asset/image/mobifone/logo.png" alt=""></a>
+                    </button>
+                </div>
+                <div class="col-sm-3">
+                    <button class="btn btn-light rounded-pill px-3 mb-2 mb-lg-0">
+                        <a href="./vinaphone.html"><img class="w-50" src="./asset/image/vinaphone/logo.png" alt=""></a>
+                    </button>
+                </div>
+                <div class="col-sm-3">
+                    <button class="btn btn-light rounded-pill px-3 mb-2 mb-lg-0">
+                        <a href="./vietnamobile.html"><img class="w-50" src="./asset/image/vietnamobile/logo.png" alt=""></a>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- card -->
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-3 m-5">
+                    <div class="card">
+                        <button class="m-0 p-0 btn btn-primary btn-modal" style="border: none;background: none;" type="button" data-bs-toggle="modal" data-bs-target="#myModal">
+                            <img class="card-img-top" src="./asset/image/vinaphone/200.png" alt="Card image">
+                        </button>
+                        <div class="card-body">
+                            <h4 class="card-title">Vinaphone 200k  <i class="ri-fire-fill text-danger" style="float:right" ></i></h4>
+                            <p class="card-text" style="text-decoration-line: line-through"> 200.000 đ</p>
+                            <h5 class="card-title text-danger reduce-cost">194.800 đ</h5>
+                            <a class="add-cart cart 1 btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
+                            <a class="btn btn-danger text-light" style="float:right"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 m-5">
+                    <div class="card" >
+                        <button class="m-0 p-0 btn btn-primary btn-modal" style="border: none;background: none;" type="button" data-bs-toggle="modal" data-bs-target="#myModal">
+                            <img class="card-img-top" src="./asset/image/viettel/100.gif" alt="Card image">
+                        </button>
+                        <div class="card-body">
+                            <h4 class="card-title">Viettel 100k <i class="ri-fire-fill text-danger" style="float:right" ></i></h4>
+                            <p class="card-text" style="text-decoration-line: line-through"> 100.000 đ</p>
+                            <h5 class="card-title text-danger reduce-cost">97.500 đ</h5>
+                            <a class="add-cart cart 2 btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
+                            <a class="btn btn-danger text-light" style="float:right"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 m-5">
+                    <div class="card" >
+                        <button class="m-0 p-0 btn btn-primary btn-modal" style="border: none;background: none;" type="button" data-bs-toggle="modal" data-bs-target="#myModal">
+                            <img class="card-img-top" src="./asset/image/vietnamobile/50.png" alt="Card image">
+                        </button>
+                        <div class="card-body">
+                            <h4 class="card-title">Vietnamobile 50k<i class="ri-fire-fill text-danger" style="float:right" ></i></h4>
+                            <p class="card-text" style="text-decoration-line: line-through"> 50.000 đ</p>
+                            <h5 class="card-title text-danger reduce-cost">47.300 đ</h5>
+                            <a class="add-cart cart 3 btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
+                            <a class="btn btn-danger text-light" style="float:right"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 m-5">
+                    <div class="card" >
+                        <button class="m-0 p-0 btn btn-primary btn-modal" style="border: none;background: none;" type="button" data-bs-toggle="modal" data-bs-target="#myModal">
+                            <img class="card-img-top" src="./asset/image/mobifone/500.png" alt="Card image">
+                        </button>
+                        <div class="card-body">
+                            <h4 class="card-title">Mobifone 500k <i class="ri-fire-fill text-danger" style="float:right" ></i></h4>
+                            <p class="card-text" style="text-decoration-line: line-through"> 500.000 đ</p>
+                            <h5 class="card-title text-danger reduce-cost">487.000 đ</h5>
+                            <a class="add-cart cart 4 btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
+                            <a class="btn btn-danger text-light" style="float:right"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 m-5">
+                    <div class="card" >
+                        <button class="m-0 p-0 btn btn-primary btn-modal" style="border: none;background: none;" type="button" data-bs-toggle="modal" data-bs-target="#myModal">
+                            <img class="card-img-top" src="./asset/image/viettel100.jpeg" alt="Card image">
+                        </button>
+                        <div class="card-body">
+                            <h4 class="card-title">Viettel 100k <i class="ri-fire-fill text-danger" style="float:right" ></i></h4>
+                            <p class="card-text" style="text-decoration-line: line-through"> 100.000 đ</p>
+                            <h5 class="card-title text-danger reduce-cost">97.500 đ</h5>
+                            <a class="add-cart btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
+                            <a class="btn btn-danger text-light" style="float:right"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 m-5">
+                    <div class="card" >
+                        <button class="m-0 p-0 btn btn-primary btn-modal" style="border: none;background: none;" type="button" data-bs-toggle="modal" data-bs-target="#myModal">
+                            <img class="card-img-top" src="./asset/image/viettel100.jpeg" alt="Card image">
+                        </button>
+                        <div class="card-body">
+                            <h4 class="card-title">Viettel 100k <i class="ri-fire-fill text-danger" style="float:right" ></i></h4>
+                            <p class="card-text" style="text-decoration-line: line-through"> 100.000 đ</p>
+                            <h5 class="card-title text-danger reduce-cost">97.500 đ</h5>
+                            <a class="add-cart btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
+                            <a class="btn btn-danger text-light" style="float:right"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="container mt-3 d-flex justify-content-center">
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="">Previous</a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="./page2.html">2</a></li>
+                <li class="page-item"><a class="page-link" href="./page3.html">3</a></li>
+                <li class="page-item"><a class="page-link" href="./page2.html">Next</a></li>
+            </ul>
+        </div>
+
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+        
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Tên thẻ</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+            
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <p id="modal-text"></p>
+                        <a class="btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
+                        <a class="btn btn-danger text-light" style="float:right"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
+                    </div>
+            
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+
+    <footer class="" id="footer-index">
+        <nav class="navbar navbar-expand-lg bg-light navbar-light fixed-bottom shadow-sm mb">
+            <div class="container-fluid">
+                <div class="d-flex flex-grow-1">
+                    <div class="w-100 text-right">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myFooter">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="collapse navbar-collapse flex-grow-1 text-right" id="myFooter">
+                    <ul class="navbar-nav ms-auto flex-nowrap">
+                        <li class="nav-item">
+                            <a href="https://www.facebook.com" class="nav-link">
+                                <i class="ri-facebook-circle-fill"></i> TCĐTonline
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://www.instagram.com" class="nav-link">
+                                <i class="ri-instagram-fill"></i> TheCaoDienThoai
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="tel:+123456789" class="nav-link">
+                                <i class="ri-phone-fill"></i> 0123-456-789
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="mailto:someone@example.com" class="nav-link">
+                                <i class="ri-mail-fill"></i> someone@example.com
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </footer>
+    <script src="./js/main.js"></script>
+    <!-- <script src="./js/cart.js"></script> -->
+</body>
+</html>
