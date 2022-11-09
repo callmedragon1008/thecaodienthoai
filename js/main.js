@@ -9,7 +9,7 @@ let carts = document.querySelectorAll('.add-cart');
 let inCart=[]
 let productName=[]
 let productCost=[]
-let numberCart
+let numberCart=0
 let product=[]
 let string1=''
 let string2=''
@@ -42,11 +42,9 @@ if (status1==1){
 
 // shopping cart
 
-
-if (localStorage.getItem('numberCart1')!=undefined){
+if (localStorage.getItem('numberCart1')!=null)
     numberCart=localStorage.getItem('numberCart1')
-    document.querySelector('.cart span').innerText = numberCart;
-}
+document.querySelector('.cart span').innerText = numberCart;
 for (let i=0;i<btnModals.length;i++){
     string1=cardName[2*i].innerText
     string2=reduceCost[i].innerText
@@ -77,9 +75,8 @@ for (let i = 0; i < btnModals.length; i++) {
     document.querySelector('.cart span').innerText = numberCart;
 })
 }
-numberCart=localStorage.getItem('numberCart1')
-document.querySelector('.cart span').innerText = numberCart;
-
+// numberCart=localStorage.getItem('numberCart1')
+// document.querySelector('.cart span').innerText = numberCart;
 
 headerLogout.addEventListener('click',function(){
     localStorage.setItem('status',0)
