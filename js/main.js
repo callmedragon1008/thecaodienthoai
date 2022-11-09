@@ -55,7 +55,8 @@ for (let i=0;i<btnModals.length;i++){
         inCart:0
     })
 }
-
+if (localStorage.getItem('product')==null)
+    localStorage.setItem('product',product)
 if (productFromStorage1!=null)
 for (let i=0;i<btnModals.length;i++){
     if (productFromStorage1[i].inCart!=0)
