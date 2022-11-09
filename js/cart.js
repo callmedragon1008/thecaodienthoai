@@ -44,7 +44,7 @@ for (let i=0;i<cart.length;i++){
             <div class="col-3">
                 <span>${cart[i].name}</span>
             </div>
-            <div class="col-3 ">
+            <div class="col-3">
                 <span>${cart[i].cost}</span>
             </div>
             <div class="col-3 in-cart">
@@ -53,7 +53,7 @@ for (let i=0;i<cart.length;i++){
                 <button class="navbar-toggler plus" type="button" style="margin-left:20px;"><i class="ti-plus"></i></button>
             </div>
             <div class="col-3 d-flex justify-content-end">
-                <span>${temp}đ<span>
+                <span class="sum-cart">${temp}đ<span>
             </div>
         </div>
     </div>            `
@@ -66,6 +66,7 @@ productTotal.innerHTML+=`
 let btnMinus=document.querySelectorAll(".minus")
 let btnPlus=document.querySelectorAll(".plus")
 let cart1=document.querySelectorAll(".in-cart span")
+let sumCart=document.querySelectorAll(".sum-cart")
 for (let i=0;i<btnMinus.length;i++)
 {
     btnMinus[i].addEventListener('click',function(){
@@ -75,19 +76,43 @@ for (let i=0;i<btnMinus.length;i++)
             numberCart--;
             document.querySelector('.cart span').innerText = numberCart;
             localStorage.setItem("numberCart1",numberCart)
-            // product[count[i]].inCart=cart[count[i]].inCart
             temp=JSON.stringify(cart)
             localStorage.setItem("product",temp)
-            temp=parseInt(cart[count[i]].inCart)*parseInt(cart[count[i]].cost)
+            temp=parseInt(cart[count[i]].cost)
             sum=sum-temp
             sum1=sum.toLocaleString();
             productTotal.innerHTML=`
             <span>${sum1}đ<span>
         `
+            temp=parseInt(cart[count[i]].cost)*parseInt(cart[count[i]].inCart)
+            temp=temp.toLocaleString();
+            sumCart[i].innerText=temp
         }
     })
 }
 
+for (let i=0;i<btnPlus.length;i++)
+{
+    btnPlus[i].addEventListener('click',function(){
+            cart1[i].innerHTML=cart[count[i]].inCart+1;
+            cart[count[i]].inCart++;
+            numberCart++;
+            document.querySelector('.cart span').innerText = numberCart;
+            localStorage.setItem("numberCart1",numberCart)
+            // product[count[i]].inCart=cart[count[i]].inCart
+            temp=JSON.stringify(cart)
+            localStorage.setItem("product",temp)
+            temp=parseInt(cart[count[i]].cost)
+            sum=sum+temp
+            sum1=sum.toLocaleString();
+            productTotal.innerHTML=`
+            <span>${sum1}đ<span>
+        `
+            temp=parseInt(cart[count[i]].cost)*parseInt(cart[count[i]].inCart)
+            temp=temp.toLocaleString();
+            sumCart[i].innerText=temp
+    })
+}
 // let carts = document.querySelectorAll('.add-cart');
 // let products=[
 //     {
