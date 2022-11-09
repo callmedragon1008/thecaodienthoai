@@ -21,9 +21,11 @@ let headerUser=document.querySelector('.header-user-name')
 let headerLogout=document.querySelector('.header-log-out')
 let name1=localStorage.getItem('username1')
 let status1=localStorage.getItem('status')
+let realValue=[]
 for (let i=0;i<btnModals.length;i++){
   string=cardName[2*i].innerText;
   type.push(string.slice(0,string.search(" ")))
+  realValue.push(cost[i].innerText)
 }
 // console.log(btnModals.length)
 for (let i=0;i<btnModals.length;i++){
@@ -45,7 +47,7 @@ if (status1==1){
 if (localStorage.getItem('numberCart1')!=null)
     numberCart=localStorage.getItem('numberCart1')
 else   
-    localStorage.setItem('numberCart1',numberCart)
+    localStorage.setItem('numberCart1',0)
 document.querySelector('.cart span').innerText = numberCart;
 for (let i=0;i<btnModals.length;i++){
     string1=cardName[2*i].innerText
@@ -53,6 +55,7 @@ for (let i=0;i<btnModals.length;i++){
     product.push({
         name:string1,
         type:type[i],
+        realValue:realValue[i],
         cost:string2,
         inCart:0
     })
@@ -95,6 +98,63 @@ headerLogout.addEventListener('click',function(){
     headerUser.classList.add('disappear')
     headerLogout.classList.add('disappear')
 })
+
+// search
+
+let btnSearch=document.querySelector("#search-icon")
+let productList=document.getElementsByClassName("product-list")
+btnSearch.addEventListener('click',function(){
+    var e = document.getElementById("select-bottom")
+    var giaTri = e.options[e.selectedIndex].innerText
+    var searchInput=document.getElementById("search-input")
+    var searchInputText=searchInput.value
+    if (searchInputText==''){
+        if (giaTri!='Danh mục')
+            window.location.href=giaTri+".html"
+        else
+            window.location.href="index.html"
+    }
+    else{
+        window.location.href="search.html"
+        json=localStorage.getItem("product")
+        product=JSON.parse(json)
+        if (giaTri!='Danh mục'){
+            for (let i=0;i<product.length;i++){
+                if (product[i].type==giaTri&&(product[i].name.lastIndexOf(searchInputText)||product[i].realValue.lastIndexOf(searchInputText)))
+                    productList+=`
+                    <div class="col-lg mt-5">
+                    <div class="card d-flex justify-content-center" style="width:400px">
+                        <img class="card-img-top" src="./asset/image/${product[i].name}.jpeg" alt="Card image">
+                        <div class="card-body">
+                            <h4 class="card-title">${product[i].name}</h4>
+                            <p class="card-text" style="text-decoration-line: line-through"> ${product[i].realValue} đ</p>
+                            <h5 class="card-title text-danger">${product[i].cost}</h5>
+                            <a class="btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
+                            <a class="btn btn-danger text-light" style="float:right"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
+                        </div>
+                    </div>
+                </div>  `
+            }
+        }
+        else
+            for (let i=0;i<product.length;i++){
+                if ((product[i].name.lastIndexOf(searchInputText)!=-1||product[i].realValue.lastIndexOf(searchInputText)!=-1))
+                    productList+=`
+                    <div class="col-lg mt-5">
+                    <div class="card d-flex justify-content-center" style="width:400px">
+                        <img class="card-img-top" src="./asset/image/${product[i].name}.jpeg" alt="Card image">
+                        <div class="card-body">
+                            <h4 class="card-title">${product[i].name}</h4>
+                            <p class="card-text" style="text-decoration-line: line-through"> ${product[i].realValue} đ</p>
+                            <h5 class="card-title text-danger">${product[i].cost}</h5>
+                            <a class="btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
+                            <a class="btn btn-danger text-light" style="float:right"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
+                        </div>
+                    </div>
+                </div>  `}
+    }
+})
+
 // localStorage.setItem('cardName',cardName)
 // localStorage.setItem('reduceCost',reduceCost)
 // let test=localStorage.getItem('cardName')
