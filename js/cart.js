@@ -32,6 +32,7 @@ let productContainer = document.querySelector(".products");
 let json=localStorage.getItem('product')
 let cart=JSON.parse(json)
 let sum=0
+
 for (let i=0;i<cart.length;i++){
     if (cart[i].inCart!=0){
         cart[i].cost=cart[i].cost.replace('.','')
