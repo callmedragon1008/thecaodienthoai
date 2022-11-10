@@ -42,21 +42,28 @@ for (let i=0;i<cart.length;i++){
         productContainer.innerHTML += `
         <div class="small-middle-container" id="cart-child-${dem}" style="text-align: center;margin-bottom: 1rem">
         <div class="row">
+            <div class="col-1">
+                <button type="button" class="navbar-toggler delete">
+                    <span class="text-danger d-flex align-items-center">
+                        <i class="ri-delete-bin-5-line"></i>
+                    </span>
+                </button>
+            </div>
             <div class="col-3">
                 <span>${cart[i].name}</span>
             </div>
-            <div class="col-3">
+            <div class="col-2">
                 <span>${cart[i].cost}</span>
             </div>
             <div class="col-3 in-cart">
-                <button class="navbar-toggler minus" type="button" style="margin-right:20px;" ><i class="ti-minus"></i></button>
+                <button class="navbar-toggler minus" type="button" style="margin-right:20px;" ><i class="ti-minus text-danger"></i></button>
                 <span style="font-size:19px;">${cart[i].inCart}</span>
-                <button class="navbar-toggler plus" type="button" style="margin-left:20px;"><i class="ti-plus"></i></button>
+                <button class="navbar-toggler plus" type="button" style="margin-left:20px;"><i class="ti-plus text-primary"></i></button>
             </div>
             <div class="col-3 d-flex justify-content-end">
                 <span class="sum-cart">${temp}đ<span>
             </div>
-            <button class="navbar-toggler delete" type="button" style="margin-right:20px;" >Xóa khỏi giỏ hàng</button>
+            
         </div>
     </div>            `
     dem++;
