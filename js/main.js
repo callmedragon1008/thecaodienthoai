@@ -102,57 +102,22 @@ headerLogout.addEventListener('click',function(){
 // search
 
 let btnSearch=document.querySelector("#search-icon")
-let productList=document.getElementsByClassName("product-list")
 btnSearch.addEventListener('click',function(){
     var e = document.getElementById("select-bottom")
-    var giaTri = e.options[e.selectedIndex].innerText
+    var select = e.options[e.selectedIndex].innerText
     var searchInput=document.getElementById("search-input")
     var searchInputText=searchInput.value
     if (searchInputText==''){
-        if (giaTri!='Danh mục')
-            window.location.href=giaTri+".html"
+        if (select!='Danh mục')
+            window.location.href=select+".html"
         else
             window.location.href="index.html"
     }
     else{
+        localStorage.setItem('select',select)
+        localStorage.setItem('searchInputText',searchInputText)
         window.location.href="search.html"
-        json=localStorage.getItem("product")
-        product=JSON.parse(json)
-        if (giaTri!='Danh mục'){
-            for (let i=0;i<product.length;i++){
-                if (product[i].type==giaTri&&(product[i].name.lastIndexOf(searchInputText)||product[i].realValue.lastIndexOf(searchInputText)))
-                    productList+=`
-                    <div class="col-lg mt-5">
-                    <div class="card d-flex justify-content-center" style="width:400px">
-                        <img class="card-img-top" src="./asset/image/${product[i].name}.jpeg" alt="Card image">
-                        <div class="card-body">
-                            <h4 class="card-title">${product[i].name}</h4>
-                            <p class="card-text" style="text-decoration-line: line-through"> ${product[i].realValue} đ</p>
-                            <h5 class="card-title text-danger">${product[i].cost}</h5>
-                            <a class="btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
-                            <a class="btn btn-danger text-light" style="float:right"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
-                        </div>
-                    </div>
-                </div>  `
-            }
-        }
-        else
-            for (let i=0;i<product.length;i++){
-                if ((product[i].name.lastIndexOf(searchInputText)!=-1||product[i].realValue.lastIndexOf(searchInputText)!=-1))
-                    productList+=`
-                    <div class="col-lg mt-5">
-                    <div class="card d-flex justify-content-center" style="width:400px">
-                        <img class="card-img-top" src="./asset/image/${product[i].name}.jpeg" alt="Card image">
-                        <div class="card-body">
-                            <h4 class="card-title">${product[i].name}</h4>
-                            <p class="card-text" style="text-decoration-line: line-through"> ${product[i].realValue} đ</p>
-                            <h5 class="card-title text-danger">${product[i].cost}</h5>
-                            <a class="btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
-                            <a class="btn btn-danger text-light" style="float:right"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
-                        </div>
-                    </div>
-                </div>  `}
-    }
+    }   
 })
 
 // localStorage.setItem('cardName',cardName)
