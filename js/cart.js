@@ -61,7 +61,7 @@ for (let i=0;i<cart.length;i++){
                 <button class="navbar-toggler plus" type="button" style="margin-left:20px;"><i class="ti-plus text-primary"></i></button>
             </div>
             <div class="col-3 d-flex justify-content-end">
-                <span class="sum-cart">${temp}đ<span>
+                <h5 class="sum-cart">${temp}đ</h5>
             </div>
             
         </div>
