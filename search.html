@@ -27,7 +27,17 @@
                     <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
                         <li class="nav-item">
                             <form class="d-flex me-lg-3">
-                                <input class="form-control me-2" type="text" placeholder="Find on website">
+                                <input class="form-control me-2" id="search-input" type="text" placeholder="Find on website">
+                                <select class="form-select form-select-sm" id="select-bottom" style="width: 200px;margin-right: 14px;" aria-label=".form-select-sm example">
+                                    <option value="0" selected="selected">Danh mục</option>
+                                    <option value="1">Viettel</option>
+                                    <option value="2">Vinaphone</option>
+                                    <option value="3">Mobifone</option>
+                                    <option value="4">Vietnamobile</option>
+                                    <!-- <option value="5">Dưới 100k</option>
+                                    <option value="6">100k-200k</option>
+                                    <option value="7">Trên 200k</option> -->
+                                </select>
                                 <button class="btn btn-primary" id="search-icon" type="button">
                                     <i class="ti-search"></i>
                                 </button>
@@ -118,6 +128,9 @@
         </div>
     </div>
 
+    <div>
+        <h2 style="margin-left: 20px;font-size: 40px;" id="search-input">Tìm kiếm với từ khóa:  </h2>
+    </div>
     <div id="content" class="mb-5 pb-5">
         <!-- card -->
         <div class="container">
@@ -164,6 +177,5 @@
             </div>
         </nav>
     </footer>
-    <script src="./js/main.js"></script>
     <script src="./js/search.js"></script>
 </body>
