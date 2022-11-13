@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./asset/css/style.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link href="./asset/themify-icons/themify-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="./asset/fonts/remixicon.css">
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                    <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                        <span class="fs-5 d-none d-sm-inline">Menu</span>
+                    </a>
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                        <li class="nav-item">
+                            <a href="admin.html" class="nav-link align-middle px-0">
+                                <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link px-0 align-middle">
+                                <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Orders</span></a>
+                        </li>
+                        <li>
+                            <a href="./donhang.html" class="nav-link px-0 align-middle">
+                                <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Đơn hàng</span></a>
+                        </li>
+                        <li>
+                            <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                                <i class="ri-arrow-drop-down-line"></i> <span class="ms-1 d-none d-sm-inline">Sản phẩm</span> </a>
+                                <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
+                                <li class="w-100">
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Thêm sản phẩm</span> </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Xóa sản phẩm</span> </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Sửa sản phẩm</span> </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                                <i class="ri-arrow-drop-down-line"></i> <span class="ms-1 d-none d-sm-inline">Thống kê</span> </a>
+                                <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
+                                <li class="w-100">
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Viettel</span> </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Vinaphone</span> </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Mobifone</span> </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">vietnamobile</span> </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link px-0 align-middle">
+                                <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Khách hàng</span> </a>
+                        </li>
+                    </ul>
+                    <hr>
+                    <div class="dropdown pb-4">
+                        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="./asset/image/Untitled.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
+                            <span class="d-none d-sm-inline mx-1">loser</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                            <li><a class="dropdown-item" href="#">New project...</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Sign out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col py-3">
+                <form>
+                    <div class="row mb-3">
+                        <label for="inputImg" class="col-sm-2 col-form-label">Chọn ảnh</label>
+                        <div class="col-sm-10">
+                            <input type="file" class="form-control" id="img" name="img" accept="image/*">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="inputName" class="col-sm-2 col-form-label">Tên</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputName">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="inputParValue" class="col-sm-2 col-form-label">Mệnh giá</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="inputParValue">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="inputPrice" class="col-sm-2 col-form-label">Giá tiền</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="inputPrice">
+                        </div>
+                    </div>
+                    <fieldset class="row mb-3">
+                    <legend class="col-form-label col-sm-2 pt-0">Loại thẻ</legend>
+                    <div class="col-sm-10">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
+                            <label class="form-check-label" for="gridRadios1">
+                                Viettel
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                            <label class="form-check-label" for="gridRadios2">
+                                Mobiphone
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
+                            <label class="form-check-label" for="gridRadios3">
+                                Vinaphone
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios4" value="option4">
+                            <label class="form-check-label" for="gridRadios4">
+                                Vietnamobile
+                            </label>
+                        </div>
+                    <button type="submit" class="btn btn-danger">Kiểm tra</button>
+                    <button type="submit" class="btn btn-primary">Xác nhận</button>
+                </form>
+            </div>
+            <div class="container-fluid">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-lg-3 m-5">
+                        <div class="card">
+                            <button class="m-0 p-0 btn btn-primary btn-modal" style="border: none;background: none;" type="button" data-bs-toggle="modal" data-bs-target="#myModal">
+                                <img class="card-img-top" src="./asset/image/vinaphone/200.png" alt="Card image">
+                            </button>
+                            <div class="card-body">
+                                <h4 class="card-title">Vinaphone 200k  <i class="ri-fire-fill text-danger" style="float:right" ></i></h4>
+                                <p class="card-text" style="text-decoration-line: line-through"> 200.000 đ</p>
+                                <h5 class="card-title text-danger reduce-cost">194.800 đ</h5>
+                                <a class="add-cart cart 1 btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
+                                <a class="btn btn-danger text-light" style="float:right"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 m-5">
+                        <div class="card" >
+                            <button class="m-0 p-0 btn btn-primary btn-modal" style="border: none;background: none;" type="button" data-bs-toggle="modal" data-bs-target="#myModal">
+                                <img class="card-img-top" src="./asset/image/exam.jpg" alt="Card image">
+                            </button>
+                            <div class="card-body">
+                                <h4 class="card-title">Mẫu<i class="ri-fire-fill text-danger" style="float:right" ></i></h4>
+                                <p class="card-text" style="text-decoration-line: line-through"> 0 đ</p>
+                                <h5 class="card-title text-danger reduce-cost">0 đ</h5>
+                                <a class="add-cart cart 2 btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
+                                <a class="btn btn-danger text-light" style="float:right"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 m-5">
+                        <div class="card" >
+                            <button class="m-0 p-0 btn btn-primary btn-modal" style="border: none;background: none;" type="button" data-bs-toggle="modal" data-bs-target="#myModal">
+                                <img class="card-img-top" src="./asset/image/exam.jpg" alt="Card image">
+                            </button>
+                            <div class="card-body">
+                                <h4 class="card-title">Mẫu<i class="ri-fire-fill text-danger" style="float:right" ></i></h4>
+                                <p class="card-text" style="text-decoration-line: line-through">0 đ</p>
+                                <h5 class="card-title text-danger reduce-cost"> 0 đ</h5>
+                                <a class="add-cart cart 3 btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
+                                <a class="btn btn-danger text-light" style="float:right"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+    </div>
+</body>
+</html>
