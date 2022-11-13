@@ -15,7 +15,7 @@
     <div id="header">
         <nav class="navbar navbar-expand-lg bg-light navbar-light fixed-top shadow-sm mb" id="mainNav">
             <div class="container-fluid px-5">
-                <a class="navbar-brand fw-bold" href="index.html">
+                <a class="navbar-brand fw-bold header-logo" href="index.html">
                     <img src="./asset/image/Untitled.png" alt="Logo" style="width:40px;" class="rounded-pill me-2">
                     Shop Name
                 </a>
@@ -27,19 +27,31 @@
                     <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
                         <li class="nav-item">
                             <form class="d-flex me-lg-3">
-                                <input class="form-control me-2" type="text" placeholder="Find on website">
-                                <button class="btn btn-primary" type="button">
+                                <input class="form-control me-2" id="search-input" type="text" placeholder="Find on website">
+                                <select class="form-select form-select-sm" id="select-bottom" style="width: 200px;margin-right: 14px;" aria-label=".form-select-sm example">
+                                    <option value="0" selected="selected">Danh mục</option>
+                                    <option value="1">Viettel</option>
+                                    <option value="2">Vinaphone</option>
+                                    <option value="3">Mobifone</option>
+                                    <option value="4">Vietnamobile</option>
+                                    <!-- <option value="5">Dưới 100k</option>
+                                    <option value="6">100k-200k</option>
+                                    <option value="7">Trên 200k</option> -->
+                                </select>
+                                <button class="btn btn-primary" id="search-icon" type="button">
                                     <i class="ti-search"></i>
                                 </button>
                             </form>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link me-lg-3" href="javascript:void(0)">
-                                <i class="ti-shopping-cart"></i> Shopping Cart
+                        <li class="cart nav-item">
+                            <a class=" nav-link me-lg-3" href="./shopping-cart.html">
+                                <i class="ti-shopping-cart"></i>Shopping Cart (<span>0</span>)
                             </a>
                         </li>
-                        <li class="nav-item"><a class="nav-link me-lg-3" href="./Register.html"><i class="ri-edit-2-line"></i> Đăng Ký</a></li>
-                        <li class="nav-item"><a class="nav-link me-lg-3" href="./login.html"><i class="ri-login-box-line"></i> Đăng Nhập</a></li>
+                        <li class="nav-item header-user-name disappear"></li>
+                        <li class="nav-item header-log-out disappear"><a class="nav-link me-lg-3" href="./index.html"><i class="ri-logout-box-line"></i> Đăng xuất</a></li>
+                        <!-- <li class="nav-item header-account"><a class="nav-link me-lg-3" href="./Register.html"><i class="ri-edit-2-line"></i> Đăng Ký</a></li> -->
+                        <li class="nav-item header-login"><a class="nav-link me-lg-3" href="./login.html"><i class="ri-login-box-line"></i> Đăng Nhập/Đăng Ký</a></li>
                     </ul>
                     <button class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" data-bs-toggle="modal" data-bs-target="#feedbackModal">
                         <span class="d-flex align-items-center">
@@ -51,7 +63,6 @@
             </div>
         </nav>
     </div>
-
     <!-- Feedback Modal-->
     <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -146,105 +157,43 @@
         <h3 class="d-flex justify-content-center mt-5 h1" style="font-weight:800;">Chọn mệnh giá</h3>
         <!-- card -->
         <div class="container-fluid">
-            <div class="row d-flex justify-content-center">
-                <div class="col-lg-3 m-5">
-                    <div class="card" >
-                        <img class="card-img-top" src="./asset/image/mobifone/10.gif" alt="Card image">
-                        <div class="card-body">
-                            <h4 class="card-title">Mobifone 10k </h4>
-                            <p class="card-text" style="text-decoration-line: line-through"><br></p>
-                            <h5 class="card-title text-danger">10.000 đ</h5>
-                            <a href="#" class="btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
-                            <a href="#" class="btn btn-danger text-light" style="float:right"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
+            <div class="row d-flex justify-content-center" id="card-list">
+          
+            </div>
+        </div>
+
+        <div class="container mt-3 d-flex justify-content-center">
+            <ul class="pagination paging">
+                
+            </ul>
+
+
+            <div class="modal" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+            
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="modal-name"></h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 m-5">
-                    <div class="card" >
-                        <img class="card-img-top" src="./asset/image/mobifone/20.png" alt="Card image">
-                        <div class="card-body">
-                            <h4 class="card-title">Mobifone 20k </h4>
-                            <p class="card-text" style="text-decoration-line: line-through"><br></p>
-                            <h5 class="card-title text-danger">20.000 đ</h5>
-                            <a href="#" class="btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
-                            <a href="#" class="btn btn-danger text-light" style="float:right"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <p id="modal-text"></p>
+                            <a class="btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
+                            <a class="btn btn-danger text-light" style="float:right"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 m-5">
-                    <div class="card" >
-                        <img class="card-img-top" src="./asset/image/mobifone/30.png" alt="Card image">
-                        <div class="card-body">
-                            <h4 class="card-title">Mobifone 30k </h4>
-                            <p class="card-text" style="text-decoration-line: line-through"><br></p>
-                            <h5 class="card-title text-danger">30.000 đ</h5>
-                            <a href="#" class="btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
-                            <a href="#" class="btn btn-danger text-light" style="float:right"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
+                
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 m-5">
-                    <div class="card" >
-                        <img class="card-img-top" src="./asset/image/mobifone/50.gif" alt="Card image">
-                        <div class="card-body">
-                            <h4 class="card-title">Mobifone 50k<i class="ri-price-tag-3-fill text-danger" style="float:right;font-weight:800;"> -2.6%</i></h4>
-                            <p class="card-text" style="text-decoration-line: line-through"> 50.000 đ</p>
-                            <h5 class="card-title text-danger">48.700 đ</h5>
-                            <a href="#" class="btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
-                            <a href="#" class="btn btn-danger text-light" style="float:right"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 m-5">
-                    <div class="card" >
-                        <img class="card-img-top" src="./asset/image/mobifone/100.png" alt="Card image">
-                        <div class="card-body">
-                            <h4 class="card-title">Mobifone 100k <i class="ri-price-tag-3-fill text-danger" style="float:right;font-weight:800;"> -2.6%</i></h4>
-                            <p class="card-text" style="text-decoration-line: line-through"> 100.000 đ</p>
-                            <h5 class="card-title text-danger">97.400 đ</h5>
-                            <a href="#" class="btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
-                            <a href="#" class="btn btn-danger text-light" style="float:right"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 m-5">
-                    <div class="card" >
-                        <img class="card-img-top" src="./asset/image/mobifone/200.png" alt="Card image">
-                        <div class="card-body">
-                            <h4 class="card-title">Mobifone 200k <i class="ri-price-tag-3-fill text-danger" style="float:right;font-weight:800;"> -2.6%</i></h4>
-                            <p class="card-text" style="text-decoration-line: line-through"> 200.000 đ</p>
-                            <h5 class="card-title text-danger">194.800 đ</h5>
-                            <a href="#" class="btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
-                            <a href="#" class="btn btn-danger text-light" style="float:right"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 m-5">
-                    <div class="card" >
-                        <img class="card-img-top" src="./asset/image/mobifone/300.png" alt="Card image">
-                        <div class="card-body">
-                            <h4 class="card-title">Mobifone 300k <i class="ri-price-tag-3-fill text-danger" style="float:right;font-weight:800;"> -2.6%</i></h4>
-                            <p class="card-text" style="text-decoration-line: line-through"> 300.000 đ</p>
-                            <h5 class="card-title text-danger">292.200 đ</h5>
-                            <a href="#" class="btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
-                            <a href="#" class="btn btn-danger text-light" style="float:right"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 m-5">
-                    <div class="card" >
-                        <img class="card-img-top" src="./asset/image/mobifone/500.png" alt="Card image">
-                        <div class="card-body">
-                            <h4 class="card-title">Mobifone 500k <i class="ri-price-tag-3-fill text-danger" style="float:right;font-weight:800;"> -2.6%</i></h4>
-                            <p class="card-text" style="text-decoration-line: line-through"> 500.000 đ</p>
-                            <h5 class="card-title text-danger">487.000 đ</h5>
-                            <a href="#" class="btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
-                            <a href="#" class="btn btn-danger text-light" style="float:right"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
-                        </div>
+            
                     </div>
                 </div>
             </div>
-        </div>
+
+
 
     <footer class="" id="footer-index">
         <nav class="navbar navbar-expand-lg bg-light navbar-light fixed-bottom shadow-sm mb">
@@ -283,4 +232,5 @@
             </div>
         </nav>
     </footer>
+    <script src="./js/Mobifone.js"></script>
 </body>
