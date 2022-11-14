@@ -60,7 +60,7 @@ let a=product.length-6*(pageNumber-1);
 if (a>6) a=6
 for (let i=0;i<a;i++){
     var imgName=product[i+(pageNumber-1)*6].name.replace(' ','')
-    if (product[i+(pageNumber-1)*6].realValue!=product[i+(pageNumber-1)*6].cost)
+    if (product[i+(pageNumber-1)*6].realValue!=product[i+(pageNumber-1)*6].cost){
         cardList.innerHTML += `
             <div class="col-lg-3 m-5">
             <div class="card">
@@ -72,11 +72,12 @@ for (let i=0;i<a;i++){
                     <p class="card-text" style="text-decoration-line: line-through"> ${product[i+(pageNumber-1)*6].realValue}</p>
                     <h5 class="card-title text-danger reduce-cost">${product[i+(pageNumber-1)*6].cost}</h5>
                     <a class="add-cart cart 1 btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
-                    <a class="btn btn-danger text-light" style="float:right"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
+                    <a class="btn btn-danger text-light pay-button" style="float:right" data-bs-toggle="modal" data-bs-target="#myModal-pay"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
                 </div>
             </div>
             </div>      
         `
+    }
     else
         cardList.innerHTML += `
                 <div class="col-lg-3 m-5">
@@ -88,7 +89,7 @@ for (let i=0;i<a;i++){
                         <h4 class="card-title" style="min-height:70px;">${product[i+(pageNumber-1)*6].name}</h4>
                         <h5 class="card-title text-danger reduce-cost">${product[i+(pageNumber-1)*6].cost}</h5>
                         <a class="add-cart cart 1 btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
-                        <a class="btn btn-danger text-light" style="float:right"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
+                        <a class="btn btn-danger text-light pay-button" style="float:right" data-bs-toggle="modal" data-bs-target="#myModal-pay"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
                     </div>
                 </div>
                 </div>      
@@ -142,11 +143,25 @@ let headerUser=document.querySelector('.header-user-name')
 let headerLogout=document.querySelector('.header-log-out')
 let name1=localStorage.getItem('username1')
 let status1=localStorage.getItem('status')
+
 for (let i=0;i<btnModals.length;i++){
   btnModals[i].addEventListener('click',function(){
     document.getElementById("modal-name").innerText=product[i+(pageNumber-1)*6].name
     document.getElementById("modal-text").innerHTML='Mệnh giá: '+product[i+(pageNumber-1)*6].realValue+'<br/>'+'Loại thẻ: '+product[i+(pageNumber-1)*6].type+'<br/>'+'Giá: '+product[i+(pageNumber-1)*6].cost;  
-  })
+    var btnCart=document.querySelector('.btn-cart')
+    btnCart.addEventListener('click',function(){
+        product[i+(pageNumber-1)*6].inCart++;
+        var json=JSON.stringify(product)
+        localStorage.setItem('product',json)
+        if (document.querySelector('.cart span').textContent=='0') 
+            numberCart=1
+        else{
+        numberCart++;
+        localStorage.setItem('numberCart1',numberCart)
+    }
+        document.querySelector('.cart span').innerText = numberCart;
+    })
+})
 }
 // header,login
 if (status1==1){
@@ -159,7 +174,7 @@ if (status1==1){
 // Thêm sản phẩm vào giỏ hàng
 for (let i = 0; i < btnModals.length; i++) {
     carts[i].addEventListener('click',()=>{
-        product[i].inCart++;
+        product[i+(pageNumber-1)*6].inCart++;
         var json=JSON.stringify(product)
         localStorage.setItem('product',json)
         if (document.querySelector('.cart span').textContent=='0') 
@@ -171,6 +186,50 @@ for (let i = 0; i < btnModals.length; i++) {
         document.querySelector('.cart span').innerText = numberCart;
 })
 }
+
+// Nút mua ngay
+
+let telephone=document.getElementById('telephone-input')
+let order=[]
+let customer=[]
+let payBtn=document.querySelectorAll('.pay-button')
+let payModal=document.getElementById('myModal-pay')
+for (let i=0;i < payBtn.length;i++){
+    payModal.classList.remove('disappear')
+    payBtn[i].addEventListener('click',function(){
+        var confirmBtn=document.querySelector('.confirm-button')
+        confirmBtn.addEventListener('click',function(){
+            var orderID=localStorage.getItem('countOrder')
+            if (orderID==null) orderID=1
+            else orderID=JSON.parse(orderID)+1
+            if (status1!=1)
+                alert('Vui lòng đăng nhập để thanh toán')
+            else{
+                if (telephone.value=='')
+                    alert('Vui lòng nhập số điện thoại')
+                else{
+                    json=JSON.stringify(orderID)
+                    localStorage.setItem('countOrder',json)
+                    order.push({
+                        id:i+(pageNumber-1)*6,
+                        productName:product[i+(pageNumber-1)*6].name,
+                        productType:product[i+(pageNumber-1)*6].type,
+                        productRealValue:product[i+(pageNumber-1)*6].replace,
+                        productCost:product[i+(pageNumber-1)*6].cost,
+                        productInCart:product[i+(pageNumber-1)*6].inproduct,
+                    })
+                    json=JSON.stringify(order)
+                    localStorage.setItem('order'+orderID,json)
+                    localStorage.setItem('telephone'+orderID,telephone.value)
+                    localStorage.setItem('customer'+orderID,name1)
+                    alert('Đơn hàng đang được xử lý')
+                    window.location.href="index.html"
+                }
+            }
+    })
+})
+}
+
 
 headerLogout.addEventListener('click',function(){
     localStorage.setItem('status',0)
@@ -205,3 +264,51 @@ btnSearch.addEventListener('click',function(){
         window.location.href="search.html"
     }   
 })
+
+
+// Mua ngay
+
+
+
+
+
+
+// Thanh toán
+
+// let confirmBtn=document.querySelector('.confirm-button')
+// let telephone=document.getElementById('telephone-input')
+// let order=[]
+// let customer=[]
+// let orderID=localStorage.getItem('orderId')
+// if (orderID==null) orderID=1
+// confirmBtn.addEventListener('click',function(){
+//     if (status1!=1)
+//         alert('Vui lòng đăng nhập để thanh toán')
+//     else{
+//         if (telephone.value=='')
+//             alert('Vui lòng nhập số điện thoại')
+//         else{
+//             for (let i=0;i<cart.length;i++)
+//                 if (cart[i].inCart!=0){
+//                     order.push({
+//                         id:i,
+//                         productName:cart[i].name,
+//                         productType:cart[i].type,
+//                         productRealValue:cart[i].replace,
+//                         productCost:cart[i].cost,
+//                         productInCart:cart[i].inCart,
+//                     })
+//                     cart[i].inCart=0
+//                 }
+//             json=JSON.stringify(cart)
+//             localStorage.setItem('product',json)
+//             localStorage.setItem('numberCart1',0)
+//             json=JSON.stringify(order)
+//             localStorage.setItem('order'+orderID,json)
+//             localStorage.setItem('telephone'+orderID,telephone.value)
+//             localStorage.setItem('customer'+orderID,name1)
+//             alert('Đơn hàng đang được xác minh')
+//             window.location.href="shopping-cart.html"
+//         }
+//     }
+// })

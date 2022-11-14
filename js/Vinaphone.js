@@ -72,11 +72,26 @@ let headerUser=document.querySelector('.header-user-name')
 let headerLogout=document.querySelector('.header-log-out')
 let name1=localStorage.getItem('username1')
 let status1=localStorage.getItem('status')
+
 for (let i=0;i<btnModals.length;i++){
   btnModals[i].addEventListener('click',function(){
-    document.getElementById("modal-name").innerText=product1[i].name
-    document.getElementById("modal-text").innerHTML='Mệnh giá: '+product1[i].realValue+'<br/>'+'Loại thẻ: '+product[i].type+'<br/>'+'Giá: '+product[i].cost;  
-  })
+    document.getElementById("modal-name").innerText=product[inType[i]].name
+    document.getElementById("modal-text").innerHTML='Mệnh giá: '+product[inType[i]].realValue+'<br/>'+'Loại thẻ: '+product[inType[i]].type+'<br/>'+'Giá: '+product[inType[i]].cost;  
+    var btnCart=document.querySelector('.btn-cart')
+    btnCart.addEventListener('click',function(){
+        console.log(numberCart)
+        product[inType[i]].inCart++;
+        var json=JSON.stringify(product)
+        localStorage.setItem('product',json)
+        if (document.querySelector('.cart span').textContent=='0') 
+            numberCart=1
+        else{
+        numberCart++;
+        localStorage.setItem('numberCart1',numberCart)
+        document.querySelector('.cart span').innerText = numberCart;
+    }
+})
+})
 }
 // header,login
 if (status1==1){

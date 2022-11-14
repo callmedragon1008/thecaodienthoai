@@ -70,7 +70,7 @@ else{
                         <h4 class="card-title">${product[i].name} <i class="ri-fire-fill text-danger" style="float:right" ></i></h4>
                         <p class="card-text" style="text-decoration-line: line-through"> ${product[i].realValue}</p>
                         <h5 class="card-title text-danger reduce-cost">${product[i].cost}</h5>
-                        <a class="push-cart cart 1 btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
+                        <a class="add-cart cart 1 btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
                         <a class="btn btn-danger text-light" style="float:right"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
                     </div>
                 </div>
@@ -86,7 +86,7 @@ else{
                         <div class="card-body" >
                             <h4 class="card-title" style="min-height:70px;">${product[i].name}</h4>
                             <h5 class="card-title text-danger reduce-cost">${product[i].cost}</h5>
-                            <a class="push-cart cart 1 btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
+                            <a class="add-cart cart 1 btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
                             <a class="btn btn-danger text-light" style="float:right"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
                         </div>
                     </div>
@@ -98,17 +98,34 @@ else{
 
 // modal
 let btnModals=document.querySelectorAll(".btn-modal")
-let carts = document.querySelectorAll('.push-cart')
+let carts = document.querySelectorAll('.add-cart')
 let headerLogin=document.querySelector('.header-login')
 let headerUser=document.querySelector('.header-user-name')
 let headerLogout=document.querySelector('.header-log-out')
 let name1=localStorage.getItem('username1')
 let status1=localStorage.getItem('status')
+
 for (let i=0;i<btnModals.length;i++){
   btnModals[i].addEventListener('click',function(){
-    document.getElementById("modal-name").innerText=product1[i].name
-    document.getElementById("modal-text").innerHTML='Mệnh giá: '+product1[i].realValue+'<br/>'+'Loại thẻ: '+product1[i].type+'<br/>'+'Giá: '+product1[i].cost;  
-  })
+    document.getElementById("modal-name").innerText=product[inCart[i]].name
+    document.getElementById("modal-text").innerHTML='Mệnh giá: '+product[inCart[i]].realValue+'<br/>'+'Loại thẻ: '+product[inCart[i]].type+'<br/>'+'Giá: '+product[inCart[i]].cost;  
+    var btnCart=document.querySelector('.btn-cart')
+    btnCart.addEventListener('click',function(){
+        console.log(numberCart)
+        product[inCart[i]].inCart++;
+        var json=JSON.stringify(product)
+        localStorage.setItem('product',json)
+        if (document.querySelector('.cart span').textContent=='0') 
+            numberCart=1
+        else{
+        numberCart++;
+        localStorage.setItem('numberCart1',numberCart)
+    }
+    document.querySelector('.cart span').innerText = numberCart;
+
+})
+
+})
 }
 // header,login
 if (status1==1){
@@ -133,8 +150,15 @@ for (let i = 0; i < btnModals.length; i++) {
         localStorage.setItem('numberCart1',numberCart)
         document.querySelector('.cart span').innerText = numberCart;
 })
+
 }
 
+// Nút mua ngay
+
+let payBtn=document.querySelectorAll('.')
+
+
+// logout
 headerLogout.addEventListener('click',function(){
     localStorage.setItem('status',0)
     localStorage.setItem('numberCart1',0)
