@@ -38,9 +38,9 @@ a, a:hover, a:visited, a:active {
     margin-top: -200px;
 }
 
-#body-login {
-    overflow: hidden; /* Hide scrollbars */
-}
+/* #body-login {
+    overflow: hidden; Hide scrollbars
+} */
 
 .carousel .carousel-indicators button {
     width: 10px;
