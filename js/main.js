@@ -31,7 +31,7 @@ product=[
     {name: 'Vinaphone 100k', type: 'Vinaphone', realValue: '100.000 đ', cost: '100.000 đ', inCart: 0},
     {name: 'Vinaphone 200k', type: 'Vinaphone', realValue: '200.000 đ', cost: '194.800 đ', inCart: 0},
     {name: 'Vinaphone 300k', type: 'Vinaphone', realValue: '300.000 đ', cost: '284.800 đ', inCart: 0},
-    {name: 'Vinaphone 500k', type: 'Vinaphone', realValue: '500.000 đ', cost: '554.800 đ', inCart: 0},
+    {name: 'Vinaphone 500k', type: 'Vinaphone', realValue: '500.000 đ', cost: '454.800 đ', inCart: 0},
     {name: 'Mobifone 10k', type: 'Mobifone', realValue: '10.000 đ', cost: '10.000 đ', inCart: 0},
     {name: 'Mobifone 20k', type: 'Mobifone', realValue: '20.000 đ', cost: '20.000 đ', inCart: 0},
     {name: 'Mobifone 30k', type: 'Mobifone', realValue: '30.000 đ', cost: '30.000 đ', inCart: 0},
@@ -129,6 +129,11 @@ if (pageNumber!=1)
     pageBefore.addEventListener('click',function(){
         localStorage.setItem('pageNumber',pageNumber-1)
     })
+
+let headerLogo=document.querySelector('.header-logo')
+headerLogo.addEventListener('click',function(){
+    localStorage.setItem('pageNumber',1)
+})
 // modal
 let btnModals=document.querySelectorAll(".btn-modal")
 let carts = document.querySelectorAll('.add-cart')
@@ -151,7 +156,7 @@ if (status1==1){
     headerUser.innerHTML=`<a class="nav-link me-lg-3" href=""><i class="ti-user"></i>${name1}</a>`
 }
 
-
+// Thêm sản phẩm vào giỏ hàng
 for (let i = 0; i < btnModals.length; i++) {
     carts[i].addEventListener('click',()=>{
         product[i].inCart++;

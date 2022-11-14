@@ -44,7 +44,7 @@
                             </form>
                         </li>
                         <li class="cart nav-item">
-                            <a class="nav-link me-lg-3" href="javascript:void(0)">
+                            <a class="nav-link me-lg-3" href="./shopping-cart.html">
                                 <i class="ti-shopping-cart"></i>Shopping Cart (<span>0</span>)
                             </a>
                         </li>
@@ -129,7 +129,7 @@
     </div>
 
     <div>
-        <h2 style="margin-left: 20px;font-size: 40px;" id="search-input">Tìm kiếm với từ khóa:  </h2>
+        <h2 style="margin-left: 20px;font-size: 40px;" id="search-input-display">Tìm kiếm với từ khóa:  </h2>
     </div>
     <div id="content" class="mb-5 pb-5">
         <!-- card -->
@@ -177,5 +177,32 @@
             </div>
         </nav>
     </footer>
+
+
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+    
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title" id="modal-name"></h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <p id="modal-text"></p>
+                    <a class="btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
+                    <a class="btn btn-danger text-light" style="float:right"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
+                </div>
+        
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+    
+            </div>
+        </div>
+    </div>
+
     <script src="./js/search.js"></script>
 </body>
