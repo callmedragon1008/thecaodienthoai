@@ -163,7 +163,7 @@ confirmBtn.addEventListener('click',function(){
         if (telephone.value=='')
             alert('Vui lòng nhập số điện thoại')
         else{
-            for (let i=0;i<cart.length;i++)
+            for (let i=0;i<cart.length;i++){
                 localStorage.setItem('countOrder',orderID)
                 if (cart[i].inCart!=0){
                     order.push({
@@ -176,6 +176,7 @@ confirmBtn.addEventListener('click',function(){
                     })
                     cart[i].inCart=0
                 }
+            }
             json=JSON.stringify(cart)
             localStorage.setItem('product',json)
             localStorage.setItem('numberCart1',0)

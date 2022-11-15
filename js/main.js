@@ -51,10 +51,9 @@ else{
 }
 let countPage=parseInt(product.length/6)+1
 let pageNumber=localStorage.getItem('pageNumber')
-if (pageNumber==null) pageNumber=1
+if (location.pathname=='/index.html') pageNumber=1
 pageNumber=parseInt(pageNumber)
 localStorage.setItem('pageNumber',pageNumber)
-
 let cardList=document.getElementById("card-list")
 let a=product.length-6*(pageNumber-1);
 if (a>6) a=6
@@ -131,10 +130,10 @@ if (pageNumber!=1)
         localStorage.setItem('pageNumber',pageNumber-1)
     })
 
-let headerLogo=document.querySelector('.header-logo')
-headerLogo.addEventListener('click',function(){
-    localStorage.setItem('pageNumber',1)
-})
+// let headerLogo=document.querySelector('.header-logo')
+// headerLogo.addEventListener('click',function(){
+//     localStorage.setItem('pageNumber',1)
+// })
 // modal
 let btnModals=document.querySelectorAll(".btn-modal")
 let carts = document.querySelectorAll('.add-cart')
@@ -216,7 +215,7 @@ for (let i=0;i < payBtn.length;i++){
                         productType:product[i+(pageNumber-1)*6].type,
                         productRealValue:product[i+(pageNumber-1)*6].replace,
                         productCost:product[i+(pageNumber-1)*6].cost,
-                        productInCart:product[i+(pageNumber-1)*6].inproduct,
+                        productInCart:product[i+(pageNumber-1)*6].inCart,
                     })
                     json=JSON.stringify(order)
                     localStorage.setItem('order'+orderID,json)

@@ -27,7 +27,7 @@ if (select!='Danh mục'){
                         <p class="card-text" style="text-decoration-line: line-through"> ${product[i].realValue}</p>
                         <h5 class="card-title text-danger reduce-cost">${product[i].cost}</h5>
                         <a class="push-cart cart 1 btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
-                        <a class="btn btn-danger text-light" style="float:right"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
+                        <a class="btn btn-danger text-light pay-button" style="float:right" data-bs-toggle="modal" data-bs-target="#myModal-pay"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
                     </div>
                 </div>
                 </div>      
@@ -43,7 +43,7 @@ if (select!='Danh mục'){
                             <h4 class="card-title" style="min-height:70px;">${product[i].name}</h4>
                             <h5 class="card-title text-danger reduce-cost">${product[i].cost}</h5>
                             <a class="push-cart cart 1 btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
-                            <a class="btn btn-danger text-light" style="float:right"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
+                            <a class="btn btn-danger text-light pay-button" style="float:right" data-bs-toggle="modal" data-bs-target="#myModal-pay"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
                         </div>
                     </div>
                     </div>      
@@ -71,7 +71,7 @@ else{
                         <p class="card-text" style="text-decoration-line: line-through"> ${product[i].realValue}</p>
                         <h5 class="card-title text-danger reduce-cost">${product[i].cost}</h5>
                         <a class="add-cart cart 1 btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
-                        <a class="btn btn-danger text-light" style="float:right"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
+                        <a class="btn btn-danger text-light pay-button" style="float:right"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
                     </div>
                 </div>
                 </div>      
@@ -87,7 +87,7 @@ else{
                             <h4 class="card-title" style="min-height:70px;">${product[i].name}</h4>
                             <h5 class="card-title text-danger reduce-cost">${product[i].cost}</h5>
                             <a class="add-cart cart 1 btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
-                            <a class="btn btn-danger text-light" style="float:right"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
+                            <a class="btn btn-danger text-light pay-button" style="float:right"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
                         </div>
                     </div>
                     </div>      
@@ -127,6 +127,52 @@ for (let i=0;i<btnModals.length;i++){
 
 })
 }
+
+// Nút mua ngay
+
+let telephone=document.getElementById('telephone-input')
+let order=[]
+let customer=[]
+let payBtn=document.querySelectorAll('.pay-button')
+let payModal=document.getElementById('myModal-pay')
+for (let i=0;i < payBtn.length;i++){
+    payModal.classList.remove('disappear')
+    payBtn[i].addEventListener('click',function(){
+        var confirmBtn=document.querySelector('.confirm-button')
+        confirmBtn.addEventListener('click',function(){
+            var orderID=localStorage.getItem('countOrder')
+            if (orderID==null) orderID=1
+            else orderID=JSON.parse(orderID)+1
+            if (status1!=1)
+                alert('Vui lòng đăng nhập để thanh toán')
+            else{
+                if (telephone.value=='')
+                    alert('Vui lòng nhập số điện thoại')
+                else{
+                    json=JSON.stringify(orderID)
+                    localStorage.setItem('countOrder',json)
+                    order.push({
+                        id:inCart[i],
+                        productName:product[inCart[i]].name,
+                        productType:product[inCart[i]].type,
+                        productRealValue:product[inCart[i]].replace,
+                        productCost:product[inCart[i]].cost,
+                        productInCart:product[inCart[i]].inCart,
+                    })
+                    json=JSON.stringify(order)
+                    localStorage.setItem('order'+orderID,json)
+                    localStorage.setItem('telephone'+orderID,telephone.value)
+                    localStorage.setItem('customer'+orderID,name1)
+                    alert('Đơn hàng đang được xử lý')
+                    window.location.href="search.html"
+                }
+            }
+    })
+})
+}
+
+
+
 // header,login
 if (status1==1){
     headerLogin.classList.push('disappear')
@@ -152,10 +198,6 @@ for (let i = 0; i < btnModals.length; i++) {
 })
 
 }
-
-// Nút mua ngay
-
-let payBtn=document.querySelectorAll('.')
 
 
 // logout
