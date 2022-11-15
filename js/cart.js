@@ -4,10 +4,11 @@ let headerUser=document.querySelector('.header-user-name')
 let headerLogout=document.querySelector('.header-log-out')
 let name1=localStorage.getItem('username1')
 let status1=localStorage.getItem('status')
+status1=parseInt(status1)
 // btnModals:đếm số sản phẩm
 let btnModals=document.querySelectorAll(".btn-modal")
 if (status1==1){
-    localStorage.setItem('numberCart',0)
+    // localStorage.setItem('numberCart',0)
     headerLogin.classList.add('disappear')
     headerUser.classList.remove('disappear')
     headerLogout.classList.remove('disappear')
@@ -144,3 +145,52 @@ for (let i=0;i<btnPlus.length;i++)
             sumCart[i].innerText=temp
     })
 }
+
+
+// Thanh toán
+
+let confirmBtn=document.querySelector('.confirm-button')
+let telephone=document.getElementById('telephone-input')
+let order=[]
+let customer=[]
+let orderID=localStorage.getItem('countOrder')
+if (orderID==null) orderID=1
+else orderID++
+confirmBtn.addEventListener('click',function(){
+    if (status1!=1)
+        alert('Vui lòng đăng nhập để thanh toán')
+    else{
+        if (telephone.value=='')
+            alert('Vui lòng nhập số điện thoại')
+        else{
+            for (let i=0;i<cart.length;i++)
+                localStorage.setItem('countOrder',orderID)
+                if (cart[i].inCart!=0){
+                    order.push({
+                        id:i,
+                        productName:cart[i].name,
+                        productType:cart[i].type,
+                        productRealValue:cart[i].replace,
+                        productCost:cart[i].cost,
+                        productInCart:cart[i].inCart,
+                    })
+                    cart[i].inCart=0
+                }
+            json=JSON.stringify(cart)
+            localStorage.setItem('product',json)
+            localStorage.setItem('numberCart1',0)
+            json=JSON.stringify(order)
+            localStorage.setItem('order'+orderID,json)
+            localStorage.setItem('telephone'+orderID,telephone.value)
+            localStorage.setItem('customer'+orderID,name1)
+            alert('Đơn hàng đang được xử lý')
+            window.location.href="shopping-cart.html"
+        }
+    }
+})
+
+
+let headerLogo=document.querySelector('.header-logo')
+headerLogo.addEventListener('click',function(){
+    localStorage.setItem('pageNumber',1)
+})
