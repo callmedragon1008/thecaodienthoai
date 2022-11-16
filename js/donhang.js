@@ -1,4 +1,6 @@
 let countOrder=localStorage.getItem('countOrder')
+if (countOrder==null)
+    countOrder='0'
 let orderList=document.getElementById('order-list')
 let order=[]
 let json
