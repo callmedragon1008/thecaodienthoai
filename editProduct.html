@@ -90,106 +90,41 @@
                 </div>
             </div>
             <div class="col py-3">
-                <form>
-                    <div class="row mb-3">
-                        <label for="inputImg" class="col-sm-2 col-form-label">Chọn ảnh</label>
-                        <div class="col-sm-10">
-                            <input type="file" class="form-control" id="img" name="img" accept="image/*">
+                <div class="box bg-light small-box-middle-container py-5" style="text-align: center; margin-top: 12rem; border-collapse: separate; border-radius: 15px;">
+                    <div class="small-middle-container mb-3">
+                        <div class="row">
+                            <div class="col-1">
+                                <h5></h5>
+                            </div>
+                            <div class="col-3">
+                                <h5>Loại</h5>
+                            </div>
+                            <div class="col-4">
+                                <h5>Mệnh giá</h5>
+                            </div>
+                            <div class="col-4">
+                                <h5>Giá tiền</h5>
+                            </div>
                         </div>
                     </div>
-                    <div class="row mb-3">
-                        <label for="inputName" class="col-sm-2 col-form-label">Tên</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputName">
+                    <div class="small-middle-container mb-3">
+                        <div class="row">
+                            <div class="col-1">
+                                <i class="ri-edit-2-fill text-warning"></i>
+                            </div>
+                            <div class="col-3">
+                                <p>Vietnamobile</p>
+                            </div>
+                            <div class="col-4">
+                                <p>200.000 đ</p>
+                            </div>
+                            <div class="col-4">
+                                <p>197.500 đ</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="row mb-3">
-                        <label for="inputParValue" class="col-sm-2 col-form-label">Mệnh giá</label>
-                        <div class="col-sm-10">
-                            <input type="number" class="form-control" id="inputParValue">
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <label for="inputPrice" class="col-sm-2 col-form-label">Giá tiền</label>
-                        <div class="col-sm-10">
-                            <input type="number" class="form-control" id="inputPrice">
-                        </div>
-                    </div>
-                    <fieldset class="row mb-3">
-                    <legend class="col-form-label col-sm-2 pt-0">Loại thẻ</legend>
-                    <div class="col-sm-10">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
-                            <label class="form-check-label" for="gridRadios1">
-                                Viettel
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                            <label class="form-check-label" for="gridRadios2">
-                                Mobiphone
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
-                            <label class="form-check-label" for="gridRadios3">
-                                Vinaphone
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios4" value="option4">
-                            <label class="form-check-label" for="gridRadios4">
-                                Vietnamobile
-                            </label>
-                        </div>
-                    <button type="submit" class="btn btn-danger">Kiểm tra</button>
-                    <button type="submit" class="btn btn-primary">Xác nhận</button>
-                </form>
+                </div>
             </div>
-            <div class="container-fluid">
-                <div class="row d-flex justify-content-center">
-                    <div class="col-lg-3 m-5">
-                        <div class="card">
-                            <button class="m-0 p-0 btn btn-primary btn-modal" style="border: none;background: none;" type="button" data-bs-toggle="modal" data-bs-target="#myModal">
-                                <img class="card-img-top" src="./asset/image/VinaPhone200k.png" alt="Card image">
-                            </button>
-                            <div class="card-body">
-                                <h4 class="card-title">Vinaphone 200k  <i class="ri-fire-fill text-danger" style="float:right" ></i></h4>
-                                <p class="card-text" style="text-decoration-line: line-through"> 200.000 đ</p>
-                                <h5 class="card-title text-danger reduce-cost">194.800 đ</h5>
-                                <a class="add-cart cart 1 btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
-                                <a class="btn btn-danger text-light" style="float:right"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 m-5">
-                        <div class="card" >
-                            <button class="m-0 p-0 btn btn-primary btn-modal" style="border: none;background: none;" type="button" data-bs-toggle="modal" data-bs-target="#myModal">
-                                <img class="card-img-top" src="./asset/image/exam.jpg" alt="Card image">
-                            </button>
-                            <div class="card-body">
-                                <h4 class="card-title">Mẫu<i class="ri-fire-fill text-danger" style="float:right" ></i></h4>
-                                <p class="card-text" style="text-decoration-line: line-through"> 0 đ</p>
-                                <h5 class="card-title text-danger reduce-cost">0 đ</h5>
-                                <a class="add-cart cart 2 btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
-                                <a class="btn btn-danger text-light" style="float:right"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 m-5">
-                        <div class="card" >
-                            <button class="m-0 p-0 btn btn-primary btn-modal" style="border: none;background: none;" type="button" data-bs-toggle="modal" data-bs-target="#myModal">
-                                <img class="card-img-top" src="./asset/image/exam.jpg" alt="Card image">
-                            </button>
-                            <div class="card-body">
-                                <h4 class="card-title">Mẫu<i class="ri-fire-fill text-danger" style="float:right" ></i></h4>
-                                <p class="card-text" style="text-decoration-line: line-through">0 đ</p>
-                                <h5 class="card-title text-danger reduce-cost"> 0 đ</h5>
-                                <a class="add-cart cart 3 btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
-                                <a class="btn btn-danger text-light" style="float:right"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
-                            </div>
-                        </div>
-                    </div>
         </div>
     </div>
 </body>
