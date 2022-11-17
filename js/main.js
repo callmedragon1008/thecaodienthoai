@@ -11,35 +11,35 @@ else
     localStorage.setItem('numberCart1',0)
 document.querySelector('.cart span').innerText = numberCart;
 product=[
-    {name: 'Viettel 10k', type: 'Viettel', realValue: '10.000 đ', cost: '10.000 đ', inCart: 0},
-    {name: 'Viettel 20k', type: 'Viettel', realValue: '20.000 đ', cost: '18.000 đ', inCart: 0},
-    {name: 'Viettel 50k', type: 'Viettel', realValue: '50.000 đ', cost: '50.000 đ', inCart: 0},
-    {name: 'Viettel 100k', type: 'Viettel', realValue: '100.000 đ', cost: '97.500 đ', inCart: 0},
-    {name: 'Viettel 200k', type: 'Viettel', realValue: '200.000 đ', cost: '197.500 đ', inCart: 0},
-    {name: 'Viettel 500k', type: 'Viettel', realValue: '500.000 đ', cost: '497.500 đ', inCart: 0},
-    {name: 'Vietnamobile 10k', type: 'Vietnamobile', realValue: '10.000 đ', cost: '10.000 đ', inCart: 0},
-    {name: 'Vietnamobile 20k', type: 'Vietnamobile', realValue: '20.000 đ', cost: '20.000 đ', inCart: 0},
-    {name: 'Vietnamobile 50k', type: 'Vietnamobile', realValue: '50.000 đ', cost: '47.300 đ', inCart: 0},
-    {name: 'Vietnamobile 100k', type: 'Vietnamobile', realValue: '100.000 đ', cost: '97.500 đ', inCart: 0},
-    {name: 'Vietnamobile 200k', type: 'Vietnamobile', realValue: '200.000 đ', cost: '197.500 đ', inCart: 0},
-    {name: 'Vietnamobile 300k', type: 'Vietnamobile', realValue: '300.000 đ', cost: '300.000 đ', inCart: 0},    
-    {name: 'Vietnamobile 500k', type: 'Vietnamobile', realValue: '500.000 đ', cost: '497.500 đ', inCart: 0},
-    {name: 'Vinaphone 10k', type: 'Vinaphone', realValue: '10.000 đ', cost: '10.000 đ', inCart: 0},
-    {name: 'Vinaphone 20k', type: 'Vinaphone', realValue: '20.000 đ', cost: '18.000 đ', inCart: 0},
-    {name: 'Vinaphone 30k', type: 'Vinaphone', realValue: '30.000 đ', cost: '30.000 đ', inCart: 0},
-    {name: 'Vinaphone 50k', type: 'Vinaphone', realValue: '50.000 đ', cost: '50.000 đ', inCart: 0},
-    {name: 'Vinaphone 100k', type: 'Vinaphone', realValue: '100.000 đ', cost: '100.000 đ', inCart: 0},
-    {name: 'Vinaphone 200k', type: 'Vinaphone', realValue: '200.000 đ', cost: '194.800 đ', inCart: 0},
-    {name: 'Vinaphone 300k', type: 'Vinaphone', realValue: '300.000 đ', cost: '284.800 đ', inCart: 0},
-    {name: 'Vinaphone 500k', type: 'Vinaphone', realValue: '500.000 đ', cost: '454.800 đ', inCart: 0},
-    {name: 'Mobifone 10k', type: 'Mobifone', realValue: '10.000 đ', cost: '10.000 đ', inCart: 0},
-    {name: 'Mobifone 20k', type: 'Mobifone', realValue: '20.000 đ', cost: '20.000 đ', inCart: 0},
-    {name: 'Mobifone 30k', type: 'Mobifone', realValue: '30.000 đ', cost: '30.000 đ', inCart: 0},
-    {name: 'Mobifone 50k', type: 'Mobifone', realValue: '50.000 đ', cost: '49.500 đ', inCart: 0},
-    {name: 'Mobifone 100k', type: 'Mobifone', realValue: '100.000 đ', cost: '97.500 đ', inCart: 0},
-    {name: 'Mobifone 200k', type: 'Mobifone', realValue: '200.000 đ', cost: '192.500 đ', inCart: 0},
-    {name: 'Mobifone 300k', type: 'Mobifone', realValue: '300.000 đ', cost: '287.500 đ', inCart: 0},
-    {name: 'Mobifone 500k', type: 'Mobifone', realValue: '500.000 đ', cost: '487.000 đ', inCart: 0},
+    {name: 'Viettel 10k', type: 'Viettel', realValue: '10000', cost: '10000', inCart: 0},
+    {name: 'Viettel 20k', type: 'Viettel', realValue: '20000', cost: '18000', inCart: 0},
+    {name: 'Viettel 50k', type: 'Viettel', realValue: '50000', cost: '50000', inCart: 0},
+    {name: 'Viettel 100k', type: 'Viettel', realValue: '100000', cost: '97500', inCart: 0},
+    {name: 'Viettel 200k', type: 'Viettel', realValue: '200000', cost: '197500', inCart: 0},
+    {name: 'Viettel 500k', type: 'Viettel', realValue: '500000', cost: '497500', inCart: 0},
+    {name: 'Vietnamobile 10k', type: 'Vietnamobile', realValue: '10000', cost: '10000', inCart: 0},
+    {name: 'Vietnamobile 20k', type: 'Vietnamobile', realValue: '20000', cost: '20000', inCart: 0},
+    {name: 'Vietnamobile 50k', type: 'Vietnamobile', realValue: '50000', cost: '47300', inCart: 0},
+    {name: 'Vietnamobile 100k', type: 'Vietnamobile', realValue: '100000', cost: '97500', inCart: 0},
+    {name: 'Vietnamobile 200k', type: 'Vietnamobile', realValue: '200000', cost: '197500', inCart: 0},
+    {name: 'Vietnamobile 300k', type: 'Vietnamobile', realValue: '300000', cost: '300000', inCart: 0},    
+    {name: 'Vietnamobile 500k', type: 'Vietnamobile', realValue: '500000', cost: '497500', inCart: 0},
+    {name: 'Vinaphone 10k', type: 'Vinaphone', realValue: '10000', cost: '10000', inCart: 0},
+    {name: 'Vinaphone 20k', type: 'Vinaphone', realValue: '20000', cost: '18000', inCart: 0},
+    {name: 'Vinaphone 30k', type: 'Vinaphone', realValue: '30000', cost: '30000', inCart: 0},
+    {name: 'Vinaphone 50k', type: 'Vinaphone', realValue: '50000', cost: '50000', inCart: 0},
+    {name: 'Vinaphone 100k', type: 'Vinaphone', realValue: '100000', cost: '100000', inCart: 0},
+    {name: 'Vinaphone 200k', type: 'Vinaphone', realValue: '200000', cost: '194800', inCart: 0},
+    {name: 'Vinaphone 300k', type: 'Vinaphone', realValue: '300000', cost: '284800', inCart: 0},
+    {name: 'Vinaphone 500k', type: 'Vinaphone', realValue: '500000', cost: '454800', inCart: 0},
+    {name: 'Mobifone 10k', type: 'Mobifone', realValue: '10000', cost: '10000', inCart: 0},
+    {name: 'Mobifone 20k', type: 'Mobifone', realValue: '20000', cost: '20000', inCart: 0},
+    {name: 'Mobifone 30k', type: 'Mobifone', realValue: '30000', cost: '30000', inCart: 0},
+    {name: 'Mobifone 50k', type: 'Mobifone', realValue: '50000', cost: '49500', inCart: 0},
+    {name: 'Mobifone 100k', type: 'Mobifone', realValue: '100000', cost: '97500', inCart: 0},
+    {name: 'Mobifone 200k', type: 'Mobifone', realValue: '200000', cost: '192500', inCart: 0},
+    {name: 'Mobifone 300k', type: 'Mobifone', realValue: '300000', cost: '287500', inCart: 0},
+    {name: 'Mobifone 500k', type: 'Mobifone', realValue: '500000', cost: '487000', inCart: 0},
 ]
 if (localStorage.getItem('product')==null){
     json=JSON.stringify(product)
@@ -49,27 +49,38 @@ else{
     json=localStorage.getItem('product')
     product=JSON.parse(json)
 }
+let imgLink=[]
+for (let i=0;i<product.length;i++){
+    imgLink.push('./asset/image/'+product[i].name.replace(' ',''))
+}
+if (localStorage.getItem('imgLink')==null){
+    json=JSON.stringify(imgLink)
+    localStorage.setItem('imgLink',json)
+}
+else{
+    json=localStorage.getItem('imgLink')
+    imgLink=JSON.parse(json)
+}
 let countPage=parseInt(product.length/6)+1
 let pageNumber=localStorage.getItem('pageNumber')
-if (location.pathname=='/index.html') pageNumber=1
+if (location.pathname=='/index.html'||location.pathname=='/') pageNumber=1
 pageNumber=parseInt(pageNumber)
 localStorage.setItem('pageNumber',pageNumber)
 let cardList=document.getElementById("card-list")
 let a=product.length-6*(pageNumber-1);
 if (a>6) a=6
 for (let i=0;i<a;i++){
-    var imgName=product[i+(pageNumber-1)*6].name.replace(' ','')
     if (product[i+(pageNumber-1)*6].realValue!=product[i+(pageNumber-1)*6].cost){
         cardList.innerHTML += `
             <div class="col-lg-3 m-5">
             <div class="card">
                 <button class="m-0 p-0 btn btn-primary btn-modal" style="border: none;background: none;" type="button" data-bs-toggle="modal" data-bs-target="#myModal">
-                    <img class="card-img-top" src="./asset/image/${imgName}.png" alt="Card image">
+                    <img class="card-img-top" src="${imgLink[i+(pageNumber-1)*6]}.png" alt="Card image">
                 </button>
                 <div class="card-body" >
                     <h4 class="card-title">${product[i+(pageNumber-1)*6].name} <i class="ri-fire-fill text-danger" style="float:right" ></i></h4>
-                    <p class="card-text" style="text-decoration-line: line-through"> ${product[i+(pageNumber-1)*6].realValue}</p>
-                    <h5 class="card-title text-danger reduce-cost">${product[i+(pageNumber-1)*6].cost}</h5>
+                    <p class="card-text" style="text-decoration-line: line-through"> ${parseInt(product[i+(pageNumber-1)*6].realValue).toLocaleString()}đ</p>
+                    <h5 class="card-title text-danger reduce-cost">${parseInt(product[i+(pageNumber-1)*6].cost).toLocaleString()}đ</h5>
                     <a class="add-cart cart 1 btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
                     <a class="btn btn-danger text-light pay-button" style="float:right" data-bs-toggle="modal" data-bs-target="#myModal-pay"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
                 </div>
@@ -82,11 +93,11 @@ for (let i=0;i<a;i++){
                 <div class="col-lg-3 m-5">
                 <div class="card">
                     <button class="m-0 p-0 btn btn-primary btn-modal" style="border: none;background: none;" type="button" data-bs-toggle="modal" data-bs-target="#myModal">
-                        <img class="card-img-top" src="./asset/image/${imgName}.png" alt="Card image">
+                        <img class="card-img-top" src="${imgLink[i+(pageNumber-1)*6]}.png" alt="Card image">
                     </button>
                     <div class="card-body" >
                         <h4 class="card-title" style="min-height:70px;">${product[i+(pageNumber-1)*6].name}</h4>
-                        <h5 class="card-title text-danger reduce-cost">${product[i+(pageNumber-1)*6].cost}</h5>
+                        <h5 class="card-title text-danger reduce-cost">${parseInt(product[i+(pageNumber-1)*6].cost).toLocaleString()}</h5>
                         <a class="add-cart cart 1 btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
                         <a class="btn btn-danger text-light pay-button" style="float:right" data-bs-toggle="modal" data-bs-target="#myModal-pay"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
                     </div>
@@ -202,10 +213,10 @@ for (let i=0;i < payBtn.length;i++){
             if (orderID==null) orderID=1
             else orderID=JSON.parse(orderID)+1
             if (status1!=1)
-                alert('Vui lòng đăng nhập để thanh toán')
+                alert('Vui lòng đăng nhậpể thanh toán')
             else{
                 if (telephone.value=='')
-                    alert('Vui lòng nhập số điện thoại')
+                    alert('Vui lòng nhập sốiện thoại')
                 else{
                     json=JSON.stringify(orderID)
                     localStorage.setItem('countOrder',json)
@@ -213,9 +224,8 @@ for (let i=0;i < payBtn.length;i++){
                         id:i+(pageNumber-1)*6,
                         productName:product[i+(pageNumber-1)*6].name,
                         productType:product[i+(pageNumber-1)*6].type,
-                        productRealValue:product[i+(pageNumber-1)*6].replace,
                         productCost:product[i+(pageNumber-1)*6].cost,
-                        productInCart:product[i+(pageNumber-1)*6].inCart,
+                        productInCart:1,
                     })
                     json=JSON.stringify(order)
                     localStorage.setItem('order'+orderID,json)
@@ -282,10 +292,10 @@ btnSearch.addEventListener('click',function(){
 // if (orderID==null) orderID=1
 // confirmBtn.addEventListener('click',function(){
 //     if (status1!=1)
-//         alert('Vui lòng đăng nhập để thanh toán')
+//         alert('Vui lòngăng nhậpể thanh toán')
 //     else{
 //         if (telephone.value=='')
-//             alert('Vui lòng nhập số điện thoại')
+//             alert('Vui lòng nhập sốiện thoại')
 //         else{
 //             for (let i=0;i<cart.length;i++)
 //                 if (cart[i].inCart!=0){
@@ -306,7 +316,7 @@ btnSearch.addEventListener('click',function(){
 //             localStorage.setItem('order'+orderID,json)
 //             localStorage.setItem('telephone'+orderID,telephone.value)
 //             localStorage.setItem('customer'+orderID,name1)
-//             alert('Đơn hàng đang được xác minh')
+//             alert('Đơn hàngangược xác minh')
 //             window.location.href="shopping-cart.html"
 //         }
 //     }

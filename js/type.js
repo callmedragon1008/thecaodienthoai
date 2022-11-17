@@ -35,8 +35,8 @@ for (let i=0;i<product1.length;i++){
                 </button>
                 <div class="card-body" >
                     <h4 class="card-title">${product1[i].name} <i class="ri-fire-fill text-danger" style="float:right" ></i></h4>
-                    <p class="card-text" style="text-decoration-line: line-through"> ${product1[i].realValue}</p>
-                    <h5 class="card-title text-danger reduce-cost">${product1[i].cost}</h5>
+                    <p class="card-text" style="text-decoration-line: line-through"> ${parseInt(product1[i].realValue).toLocaleString()}</p>
+                    <h5 class="card-title text-danger reduce-cost">${parseInt(product1[i].cost).toLocaleString()}</h5>
                     <a class="add-cart cart 1 btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
                     <a class="btn btn-danger text-light pay-button" style="float:right" data-bs-toggle="modal" data-bs-target="#myModal-pay"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
                 </div>
@@ -52,7 +52,7 @@ for (let i=0;i<product1.length;i++){
                     </button>
                     <div class="card-body" >
                         <h4 class="card-title" style="min-height:70px;">${product1[i].name}</h4>
-                        <h5 class="card-title text-danger reduce-cost">${product1[i].cost}</h5>
+                        <h5 class="card-title text-danger reduce-cost">${parseInt(product1[i].cost).toLocaleString()}</h5>
                         <a class="add-cart cart 1 btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
                         <a class="btn btn-danger text-light pay-button" style="float:right" data-bs-toggle="modal" data-bs-target="#myModal-pay"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
                     </div>
@@ -104,9 +104,7 @@ let telephone=document.getElementById('telephone-input')
 let order=[]
 let customer=[]
 let payBtn=document.querySelectorAll('.pay-button')
-let payModal=document.getElementById('myModal-pay')
 for (let i=0;i < payBtn.length;i++){
-    payModal.classList.remove('disappear')
     payBtn[i].addEventListener('click',function(){
         var confirmBtn=document.querySelector('.confirm-button')
         confirmBtn.addEventListener('click',function(){
@@ -125,9 +123,8 @@ for (let i=0;i < payBtn.length;i++){
                         id:inType[i],
                         productName:product[inType[i]].name,
                         productType:product[inType[i]].type,
-                        productRealValue:product[inType[i]].replace,
                         productCost:product[inType[i]].cost,
-                        productInCart:product[inType[i]].inCart,
+                        productInCart:1,
                     })
                     json=JSON.stringify(order)
                     localStorage.setItem('order'+orderID,json)

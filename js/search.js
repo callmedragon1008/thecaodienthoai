@@ -24,8 +24,8 @@ if (select!='Danh mục'){
                     </button>
                     <div class="card-body" >
                         <h4 class="card-title">${product[i].name} <i class="ri-fire-fill text-danger" style="float:right" ></i></h4>
-                        <p class="card-text" style="text-decoration-line: line-through"> ${product[i].realValue}</p>
-                        <h5 class="card-title text-danger reduce-cost">${product[i].cost}</h5>
+                        <p class="card-text" style="text-decoration-line: line-through"> ${parseInt(product[i].realValue).toLocaleString()}</p>
+                        <h5 class="card-title text-danger reduce-cost">${parseInt(product[i].cost).toLocaleString}</h5>
                         <a class="push-cart cart 1 btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
                         <a class="btn btn-danger text-light pay-button" style="float:right" data-bs-toggle="modal" data-bs-target="#myModal-pay"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
                     </div>
@@ -41,7 +41,7 @@ if (select!='Danh mục'){
                         </button>
                         <div class="card-body" >
                             <h4 class="card-title" style="min-height:70px;">${product[i].name}</h4>
-                            <h5 class="card-title text-danger reduce-cost">${product[i].cost}</h5>
+                            <h5 class="card-title text-danger reduce-cost">${parseInt(product[i].cost).toLocaleString}</h5>
                             <a class="push-cart cart 1 btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
                             <a class="btn btn-danger text-light pay-button" style="float:right" data-bs-toggle="modal" data-bs-target="#myModal-pay"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
                         </div>
@@ -68,10 +68,10 @@ else{
                     </button>
                     <div class="card-body" >
                         <h4 class="card-title">${product[i].name} <i class="ri-fire-fill text-danger" style="float:right" ></i></h4>
-                        <p class="card-text" style="text-decoration-line: line-through"> ${product[i].realValue}</p>
-                        <h5 class="card-title text-danger reduce-cost">${product[i].cost}</h5>
+                        <p class="card-text" style="text-decoration-line: line-through"> ${parseInt(product[i].realValue).toLocaleString()}</p>
+                        <h5 class="card-title text-danger reduce-cost">${parseInt(product[i].cost).toLocaleString()}</h5>
                         <a class="add-cart cart 1 btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
-                        <a class="btn btn-danger text-light pay-button" style="float:right"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
+                        <a class="btn btn-danger text-light pay-button" style="float:right" data-bs-toggle="modal" data-bs-target="#myModal-pay"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
                     </div>
                 </div>
                 </div>      
@@ -85,9 +85,9 @@ else{
                         </button>
                         <div class="card-body" >
                             <h4 class="card-title" style="min-height:70px;">${product[i].name}</h4>
-                            <h5 class="card-title text-danger reduce-cost">${product[i].cost}</h5>
+                            <h5 class="card-title text-danger reduce-cost">${parseInt(product[i].cost).toLocaleString()}</h5>
                             <a class="add-cart cart 1 btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
-                            <a class="btn btn-danger text-light pay-button" style="float:right"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
+                            <a class="btn btn-danger text-light pay-button" style="float:right" data-bs-toggle="modal" data-bs-target="#myModal-pay"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
                         </div>
                     </div>
                     </div>      
@@ -155,9 +155,8 @@ for (let i=0;i < payBtn.length;i++){
                         id:inCart[i],
                         productName:product[inCart[i]].name,
                         productType:product[inCart[i]].type,
-                        productRealValue:product[inCart[i]].replace,
                         productCost:product[inCart[i]].cost,
-                        productInCart:product[inCart[i]].inCart,
+                        productInCart:1,
                     })
                     json=JSON.stringify(order)
                     localStorage.setItem('order'+orderID,json)
@@ -175,7 +174,7 @@ for (let i=0;i < payBtn.length;i++){
 
 // header,login
 if (status1==1){
-    headerLogin.classList.push('disappear')
+    headerLogin.classList.add('disappear')
     headerUser.classList.remove('disappear')
     headerLogout.classList.remove('disappear')
     headerUser.innerHTML=`<a class="nav-link me-lg-3" href=""><i class="ti-user"></i>${name1}</a>`
