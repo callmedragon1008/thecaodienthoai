@@ -23,11 +23,11 @@ for (let i=1;i<=countOrder;i++){
                             <a href="#order-submenu-${i}" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
                             <i class="ri-arrow-drop-down-line"></i> <i class="ri-archive-line"></i> <h4 class="ms-1 d-none d-sm-inline">Mã số đơn hàng:  ${i}</h4> </a>
                         </div>
-                        <div class="col-4">
-                            <h4>Tên tài khoản:${customer}</h4>
+                        <div class="col-5">
+                            <h4>Tên tài khoản: ${customer}</h4>
                         </div>
-                        <div class="col-4">
-                        <h4>Số điện thoại:${telephone}</h4>
+                        <div class="col-3">
+                        <h4>Số điện thoại: ${telephone}</h4>
                         </div>
                     </div>
                 </div>
