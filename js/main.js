@@ -1,4 +1,13 @@
-
+let countOrder=localStorage.getItem('countOrder')
+if (countOrder==null){
+    countOrder='0'
+    localStorage.setItem('countOrder',0)
+}
+let countCustomer=localStorage.getItem('countCustomer')
+if (countCustomer==null){
+    countCustomer='0'
+    localStorage.setItem('countCustomer',0)
+}
 // Danh sách sản phẩm
 let numberCart=0
 let product=[]
@@ -50,8 +59,10 @@ else{
     product=JSON.parse(json)
 }
 let imgLink=[]
+let temp
 for (let i=0;i<product.length;i++){
-    imgLink.push('./asset/image/'+product[i].name.replace(' ',''))
+    temp=product[i].name.replace(' ','')
+    imgLink.push('./asset/image/'+temp+'.png')
 }
 if (localStorage.getItem('imgLink')==null){
     json=JSON.stringify(imgLink)
@@ -61,7 +72,7 @@ else{
     json=localStorage.getItem('imgLink')
     imgLink=JSON.parse(json)
 }
-let countPage=parseInt(product.length/6)+1
+let countPage=parseInt((product.length-1)/6)+1
 let pageNumber=localStorage.getItem('pageNumber')
 if (location.pathname=='/index.html'||location.pathname=='/') pageNumber=1
 pageNumber=parseInt(pageNumber)
@@ -75,7 +86,7 @@ for (let i=0;i<a;i++){
             <div class="col-lg-3 m-5">
             <div class="card">
                 <button class="m-0 p-0 btn btn-primary btn-modal" style="border: none;background: none;" type="button" data-bs-toggle="modal" data-bs-target="#myModal">
-                    <img class="card-img-top" src="${imgLink[i+(pageNumber-1)*6]}.png" alt="Card image">
+                    <img class="card-img-top" src="${imgLink[i+(pageNumber-1)*6]}" alt="Card image">
                 </button>
                 <div class="card-body" >
                     <h4 class="card-title">${product[i+(pageNumber-1)*6].name} <i class="ri-fire-fill text-danger" style="float:right" ></i></h4>
@@ -93,7 +104,7 @@ for (let i=0;i<a;i++){
                 <div class="col-lg-3 m-5">
                 <div class="card">
                     <button class="m-0 p-0 btn btn-primary btn-modal" style="border: none;background: none;" type="button" data-bs-toggle="modal" data-bs-target="#myModal">
-                        <img class="card-img-top" src="${imgLink[i+(pageNumber-1)*6]}.png" alt="Card image">
+                        <img class="card-img-top" src="${imgLink[i+(pageNumber-1)*6]}" alt="Card image">
                     </button>
                     <div class="card-body" >
                         <h4 class="card-title" style="min-height:70px;">${product[i+(pageNumber-1)*6].name}</h4>

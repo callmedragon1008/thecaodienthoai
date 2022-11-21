@@ -3,7 +3,7 @@ let email = document.getElementById("form3Example3");
 let password = document.getElementById("form3Example4");
 let repassword = document.getElementById("form3Example4d");
 let btnLogin = document.querySelector(".js-login-button");
-
+let countCustomer=JSON.parse(localStorage.getItem('countCustomer'))
 btnLogin.addEventListener("click", (e) => {
   e.preventDefault();
   let user = {
@@ -14,9 +14,10 @@ btnLogin.addEventListener("click", (e) => {
   if (!username.value || !email.value || !password.value || !repassword.value) {
     alert("Vui long nhap day du thong tin");
   } else {
-    if (!password.value != !repassword.value)
+    if (password.value != repassword.value)
       alert("Mat khau khong khop");
     localStorage.setItem(username.value, json);
+    localStorage.setItem('countCustomer', countCustomer+1);
     alert("Dang ky thanh cong");
     window.location.href="login.html";
   }
