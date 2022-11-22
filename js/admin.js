@@ -1,3 +1,23 @@
+// <!-- Đức Phật nơi đây xin phù hộ code con chạy không Bug. Nam mô A Di Đà Phật.
+//                            _
+//                         _ooOoo_
+//                        o8888888o
+//                        88" . "88
+//                        (| -_- |)
+//                        O\  =  /O
+//                     ____/`---'\____
+//                   .'  \\|     |//  `.
+//                  /  \\|||  :  |||//  \
+//                 /  _||||| -:- |||||_  \
+//                 |   | \\\  -  /'| |   |
+//                 | \_|  `\`---'//  |_/ |
+//                 \  .-\__ `-. -'__/-.  /
+//               ___`. .'  /--.--\  `. .'___
+//            ."" '<  `.___\_<|>_/___.' _> \"".
+//           | | :  `- \`. ;`. _/; .'/ /  .' ; |
+//           \  \ `-.   \_\_`. _.'_/_/  -' _.' /
+// ===========`-.`___`-.__\ \___  /__.-'_.'_.-'================
+//                         `=--=-'         ＜（＾－＾）＞ -->
 const adminContent=document.getElementById('admin-content')
 const countOrder=localStorage.getItem('countOrder')
 const countCustomer=localStorage.getItem('countCustomer')
@@ -80,6 +100,15 @@ adminContent.innerHTML=`
     </div>
     <hr>
     <div class="row" id="row-4">
+        <div class="col-4">
+            <canvas id="canvas-2"></canvas>
+        </div>
+        <div class="col-4">
+            <canvas id="canvas-3"></canvas>
+        </div>
+        <div class="col-4">
+            <canvas id="canvas-4"></canvas>
+        </div>
     </div>
 `
 let data = {
@@ -148,11 +177,6 @@ for (let j=0;j<4;j++){
         <h3>Loại sản phẩm : ${temp}</h3>
     </div>
     `
-    document.getElementById('row-4').innerHTML+=`
-    <div class="col-4">
-        <canvas id="canvas-${count}"></canvas>
-    </div>
-        `
     labels=[]
     sellProduct=[]
     backgroundColor=[]
@@ -181,9 +205,18 @@ for (let j=0;j<4;j++){
     config = {
         type: 'pie',
         data: data,
-        };
-    var myPieChart = new Chart(document.getElementById("canvas-"+count).getContext("2d"),config);
-    console.log(myPieChart)
+    };
+    
+    if (count==2){
+        var PieChart2 = new Chart(document.getElementById('canvas-2').getContext("2d"),config);
+    }
+    if (count==3){
+        var PieChart3 = new Chart(document.getElementById('canvas-3').getContext("2d"),config);
+    }
+    if (count==4){
+        var PieChart4 = new Chart(document.getElementById('canvas-4').getContext("2d"),config);
+    }
+    console.log(count)
     count++;
 }
-// đm con tó viết ra javacript
+console.log(config)
