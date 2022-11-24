@@ -15,8 +15,9 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
-                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+            
+            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark min-vh-100">
+                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white position-fixed min-vh-100">
                     <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                         <i class="ri-arrow-go-back-line"></i> <span class="fs-5 d-none d-sm-inline">Về shop</span>
                     </a>
@@ -37,7 +38,7 @@
                             <a href="./productList.html" class="nav-link px-0"><i class="ri-list-settings-line"></i> <span class="d-none d-sm-inline">Danh sách sản phẩm</span> </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="px-0 align-middle">
+                            <a href="./customer.html" class="px-0 align-middle">
                                 <i class="ri-file-user-line"></i> <span class="ms-1 d-none d-sm-inline">Khách hàng</span> </a>
                         </li>
                     </ul>
@@ -60,8 +61,24 @@
                 </div>
             </div>
             <div class="col py-3" id="product-list">
-                <div class="row" id="header">
-                    <h1>Số lượng sản phẩm : </h1>
+                <div class="row">
+                    <div class="col-12">
+                    <h2>Chọn loại sản phẩm:</h2>
+                    <select class="form-select form-select-sm" id="select-bottom" style="width: 200px;margin-right: 14px;" aria-label=".form-select-sm example">
+                        <option value="0" selected="selected">Tất cả</option>
+                        <option value="1">Viettel</option>
+                        <option value="2">Vinaphone</option>
+                        <option value="3">Mobifone</option>
+                        <option value="4">Vietnamobile</option>
+                        <!-- <option value="5">Dưới 100k</option>
+                        <option value="6">100k-200k</option>
+                        <option value="7">Trên 200k</option> -->
+                    </select>
+                </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <h2 id="header">Số lượng sản phẩm : </h2>
                 </div>
                 <br>
                 <br>
@@ -90,6 +107,26 @@
             </div>
         </div>
     </div>
+    <div class="modal" id="myModal-delete" style="margin-top: 15%;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <span id="modal-text">
+                        Xác nhận xóa sản phẩm
+                    </span>
+                    <br>
+
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger confirm-button" data-bs-dismiss="modal">Xác nhận</button>
+                </div>
+            </div>
+        </div>
     <script src="./js/productList.js"></script>
 </body>
 </html>

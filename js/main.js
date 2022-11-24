@@ -1,13 +1,73 @@
 let countOrder=localStorage.getItem('countOrder')
-if (countOrder==null){
-    countOrder='0'
-    localStorage.setItem('countOrder',0)
-}
+let json
+if (countOrder==null)
+    countOrder=5
+    localStorage.setItem('countOrder',5)
+
+let order=[{
+    productCost: "50000",
+    productInCart: 3,
+    productName: "Viettel 50.000",
+    productType: "Viettel"
+    }
+    ,{
+    productCost: "10000",
+    productInCart: 6,
+    productName: "Vietnamobile 10.000",
+    productType: "Vietnamobile"}
+    ,{
+    productCost: "200000",
+    productInCart: 4,
+    productName: "Vinaphone 200.000",
+    productType: "Vinaphone"}
+    ,{
+    productCost: "50000",
+    productInCart: 3,
+    productName: "Mobifone 50.000",
+    productType: "Mobifone"}
+]
+
 let countCustomer=localStorage.getItem('countCustomer')
 if (countCustomer==null){
-    countCustomer='0'
-    localStorage.setItem('countCustomer',0)
+    countCustomer='6'
+    localStorage.setItem('countCustomer',6)
 }
+let customerList=[
+    {
+        username:'Dat123',
+        email:'data123@gmail.com',
+        password:'1238945',
+    },
+    {
+        username:'Dat123',
+        email:'Long123@gmail.com',
+        password:'1289546',
+    },
+    {
+        username:'Dat12395',
+        email:'nguyenRamy@gmail.com',
+        password:'1839456',
+    },
+    {   
+        username:'chan',
+        email:'daylagmail@gmail.com',
+        password:'1256765',
+    },{
+        username:'uwurwr',
+        email:'data@gmail.com',
+        password:'12e8546',
+    },
+    {
+        username:'85934',
+        email:'kinf24@gmail.com',
+        password:'64396',
+    }
+]
+json=JSON.stringify(customerList)
+localStorage.setItem('customerList',json)
+let telephoneList=['014232231','035353232','09349294','038493443','093447234','093447234']
+json=JSON.stringify(telephoneList)
+localStorage.setItem('telephoneList',json)
 // Danh sách sản phẩm
 let numberCart=0
 let product=[]
@@ -20,35 +80,35 @@ else
     localStorage.setItem('numberCart1',0)
 document.querySelector('.cart span').innerText = numberCart;
 product=[
-    {name: 'Viettel 10k', type: 'Viettel', realValue: '10000', cost: '10000', inCart: 0},
-    {name: 'Viettel 20k', type: 'Viettel', realValue: '20000', cost: '18000', inCart: 0},
-    {name: 'Viettel 50k', type: 'Viettel', realValue: '50000', cost: '50000', inCart: 0},
-    {name: 'Viettel 100k', type: 'Viettel', realValue: '100000', cost: '97500', inCart: 0},
-    {name: 'Viettel 200k', type: 'Viettel', realValue: '200000', cost: '197500', inCart: 0},
-    {name: 'Viettel 500k', type: 'Viettel', realValue: '500000', cost: '497500', inCart: 0},
-    {name: 'Vietnamobile 10k', type: 'Vietnamobile', realValue: '10000', cost: '10000', inCart: 0},
-    {name: 'Vietnamobile 20k', type: 'Vietnamobile', realValue: '20000', cost: '20000', inCart: 0},
-    {name: 'Vietnamobile 50k', type: 'Vietnamobile', realValue: '50000', cost: '47300', inCart: 0},
-    {name: 'Vietnamobile 100k', type: 'Vietnamobile', realValue: '100000', cost: '97500', inCart: 0},
-    {name: 'Vietnamobile 200k', type: 'Vietnamobile', realValue: '200000', cost: '197500', inCart: 0},
-    {name: 'Vietnamobile 300k', type: 'Vietnamobile', realValue: '300000', cost: '300000', inCart: 0},    
-    {name: 'Vietnamobile 500k', type: 'Vietnamobile', realValue: '500000', cost: '497500', inCart: 0},
-    {name: 'Vinaphone 10k', type: 'Vinaphone', realValue: '10000', cost: '10000', inCart: 0},
-    {name: 'Vinaphone 20k', type: 'Vinaphone', realValue: '20000', cost: '18000', inCart: 0},
-    {name: 'Vinaphone 30k', type: 'Vinaphone', realValue: '30000', cost: '30000', inCart: 0},
-    {name: 'Vinaphone 50k', type: 'Vinaphone', realValue: '50000', cost: '50000', inCart: 0},
-    {name: 'Vinaphone 100k', type: 'Vinaphone', realValue: '100000', cost: '100000', inCart: 0},
-    {name: 'Vinaphone 200k', type: 'Vinaphone', realValue: '200000', cost: '194800', inCart: 0},
-    {name: 'Vinaphone 300k', type: 'Vinaphone', realValue: '300000', cost: '284800', inCart: 0},
-    {name: 'Vinaphone 500k', type: 'Vinaphone', realValue: '500000', cost: '454800', inCart: 0},
-    {name: 'Mobifone 10k', type: 'Mobifone', realValue: '10000', cost: '10000', inCart: 0},
-    {name: 'Mobifone 20k', type: 'Mobifone', realValue: '20000', cost: '20000', inCart: 0},
-    {name: 'Mobifone 30k', type: 'Mobifone', realValue: '30000', cost: '30000', inCart: 0},
-    {name: 'Mobifone 50k', type: 'Mobifone', realValue: '50000', cost: '49500', inCart: 0},
-    {name: 'Mobifone 100k', type: 'Mobifone', realValue: '100000', cost: '97500', inCart: 0},
-    {name: 'Mobifone 200k', type: 'Mobifone', realValue: '200000', cost: '192500', inCart: 0},
-    {name: 'Mobifone 300k', type: 'Mobifone', realValue: '300000', cost: '287500', inCart: 0},
-    {name: 'Mobifone 500k', type: 'Mobifone', realValue: '500000', cost: '487000', inCart: 0},
+    {name: 'Viettel 10.000', type: 'Viettel', realValue: '10000', cost: '10000', inCart: 0},
+    {name: 'Viettel 20.000', type: 'Viettel', realValue: '20000', cost: '18000', inCart: 0},
+    {name: 'Viettel 50.000', type: 'Viettel', realValue: '50000', cost: '50000', inCart: 0},
+    {name: 'Viettel 100.000', type: 'Viettel', realValue: '100000', cost: '97500', inCart: 0},
+    {name: 'Viettel 200.000', type: 'Viettel', realValue: '200000', cost: '197500', inCart: 0},
+    {name: 'Viettel 500.000', type: 'Viettel', realValue: '500000', cost: '497500', inCart: 0},
+    {name: 'Vietnamobile 10.000', type: 'Vietnamobile', realValue: '10000', cost: '10000', inCart: 0},
+    {name: 'Vietnamobile 20.000', type: 'Vietnamobile', realValue: '20000', cost: '20000', inCart: 0},
+    {name: 'Vietnamobile 50.000', type: 'Vietnamobile', realValue: '50000', cost: '47300', inCart: 0},
+    {name: 'Vietnamobile 100.000', type: 'Vietnamobile', realValue: '100000', cost: '97500', inCart: 0},
+    {name: 'Vietnamobile 200.000', type: 'Vietnamobile', realValue: '200000', cost: '197500', inCart: 0},
+    {name: 'Vietnamobile 300.000', type: 'Vietnamobile', realValue: '300000', cost: '300000', inCart: 0},    
+    {name: 'Vietnamobile 500.000', type: 'Vietnamobile', realValue: '500000', cost: '497500', inCart: 0},
+    {name: 'Vinaphone 10.000', type: 'Vinaphone', realValue: '10000', cost: '10000', inCart: 0},
+    {name: 'Vinaphone 20.000', type: 'Vinaphone', realValue: '20000', cost: '18000', inCart: 0},
+    {name: 'Vinaphone 30.000', type: 'Vinaphone', realValue: '30000', cost: '30000', inCart: 0},
+    {name: 'Vinaphone 50.000', type: 'Vinaphone', realValue: '50000', cost: '50000', inCart: 0},
+    {name: 'Vinaphone 100.000', type: 'Vinaphone', realValue: '100000', cost: '100000', inCart: 0},
+    {name: 'Vinaphone 200.000', type: 'Vinaphone', realValue: '200000', cost: '194800', inCart: 0},
+    {name: 'Vinaphone 300.000', type: 'Vinaphone', realValue: '300000', cost: '284800', inCart: 0},
+    {name: 'Vinaphone 500.000', type: 'Vinaphone', realValue: '500000', cost: '454800', inCart: 0},
+    {name: 'Mobifone 10.000', type: 'Mobifone', realValue: '10000', cost: '10000', inCart: 0},
+    {name: 'Mobifone 20.000', type: 'Mobifone', realValue: '20000', cost: '20000', inCart: 0},
+    {name: 'Mobifone 30.000', type: 'Mobifone', realValue: '30000', cost: '30000', inCart: 0},
+    {name: 'Mobifone 50.000', type: 'Mobifone', realValue: '50000', cost: '49500', inCart: 0},
+    {name: 'Mobifone 100.000', type: 'Mobifone', realValue: '100000', cost: '97500', inCart: 0},
+    {name: 'Mobifone 200.000', type: 'Mobifone', realValue: '200000', cost: '192500', inCart: 0},
+    {name: 'Mobifone 300.000', type: 'Mobifone', realValue: '300000', cost: '287500', inCart: 0},
+    {name: 'Mobifone 500.000', type: 'Mobifone', realValue: '500000', cost: '487000', inCart: 0},
 ]
 if (localStorage.getItem('product')==null){
     json=JSON.stringify(product)
@@ -62,6 +122,7 @@ let imgLink=[]
 let temp
 for (let i=0;i<product.length;i++){
     temp=product[i].name.replace(' ','')
+    temp=temp.replace('.000','k')
     imgLink.push('./asset/image/'+temp+'.png')
 }
 if (localStorage.getItem('imgLink')==null){
@@ -211,7 +272,6 @@ for (let i = 0; i < btnModals.length; i++) {
 // Nút mua ngay
 
 let telephone=document.getElementById('telephone-input')
-let order=[]
 let customer=[]
 let payBtn=document.querySelectorAll('.pay-button')
 let payModal=document.getElementById('myModal-pay')
