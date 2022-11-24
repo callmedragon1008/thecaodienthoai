@@ -17,6 +17,7 @@ product=JSON.parse(json)
 let cardList=document.getElementById("card-list")
 let product1=[]
 let inType=[]
+let imgLink=[]
 let type=location.pathname.slice(1,location.pathname.indexOf('.'))
 type=type[0].toUpperCase()+type.slice(1)
 for (let i=0;i<product.length;i++)
@@ -25,13 +26,18 @@ for (let i=0;i<product.length;i++)
         product1.push(product[i])
     }
 for (let i=0;i<product1.length;i++){
+        temp=product1[i].name.replace(' ','')
+        temp=temp.replace('.000','k')
+        imgLink.push('./asset/image/'+temp+'.png')
+    }
+for (let i=0;i<product1.length;i++){
     var imgName=product1[i].name.replace(' ','')
     if (product1[i].realValue!=product1[i].cost)
         cardList.innerHTML += `
             <div class="col-lg-3 m-5">
             <div class="card">
                 <button class="m-0 p-0 btn btn-primary btn-modal" style="border: none;background: none;" type="button" data-bs-toggle="modal" data-bs-target="#myModal">
-                    <img class="card-img-top" src="./asset/image/${imgName}.png" alt="Card image">
+                    <img class="card-img-top" src="${imgLink[i]}" alt="Card image">
                 </button>
                 <div class="card-body" >
                     <h4 class="card-title">${product1[i].name} <i class="ri-fire-fill text-danger" style="float:right" ></i></h4>
@@ -48,7 +54,7 @@ for (let i=0;i<product1.length;i++){
                 <div class="col-lg-3 m-5">
                 <div class="card">
                     <button class="m-0 p-0 btn btn-primary btn-modal" style="border: none;background: none;" type="button" data-bs-toggle="modal" data-bs-target="#myModal">
-                        <img class="card-img-top" src="./asset/image/${imgName}.png" alt="Card image">
+                        <img class="card-img-top" src="${imgLink[i]}" alt="Card image">
                     </button>
                     <div class="card-body" >
                         <h4 class="card-title" style="min-height:70px;">${product1[i].name}</h4>
