@@ -12,13 +12,19 @@ btnLogin.addEventListener("click", (e) => {
   };
   let json = JSON.stringify(user);
   if (!username.value || !email.value || !password.value || !repassword.value) {
-    alert("Vui long nhap day du thong tin");
+    alert("Vui lòng nhập đầy đủ thông tin");
   } else {
-    if (password.value != repassword.value)
-      alert("Mat khau khong khop");
-    localStorage.setItem(username.value, json);
-    localStorage.setItem('countCustomer', countCustomer+1);
-    alert("Dang ky thanh cong");
-    window.location.href="login.html";
+    if (email.value.indexOf('@gmail.com')==-1)
+      alert("Email không hợp lệ")
+    else{
+      if (password.value != repassword.value)
+        alert("Mật khẩu không khớp");
+      else{
+        localStorage.setItem(username.value, json);
+        localStorage.setItem('countCustomer', countCustomer+1);
+        alert("Đăng ký thành công");
+        window.location.href="login.html";
+      }
+      }
   }
 });

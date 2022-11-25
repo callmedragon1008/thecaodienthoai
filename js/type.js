@@ -120,8 +120,8 @@ for (let i=0;i < payBtn.length;i++){
             if (status1!=1)
                 alert('Vui lòng đăng nhập để thanh toán')
             else{
-                if (telephone.value=='')
-                    alert('Vui lòng nhập số điện thoại')
+                if (telephone.value==''||telephone.value.length<7||telephone.value.indexOf('0')!=0)
+                    alert('Vui lòng nhập số điện thoại hợp lệ')
                 else{
                     json=JSON.stringify(orderID)
                     localStorage.setItem('countOrder',json)
