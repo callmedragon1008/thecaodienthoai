@@ -8,10 +8,12 @@ let productList=document.getElementById("product-list")
 let searchInput1=document.getElementById('search-input-display')
 let product1=[]
 let inCart=[]
+
 if (select!='Danh mục'){
     searchInput1.innerText+="   "+searchInputText+','+select
     for (let i=0;i<product.length;i++){
     var imgName=product[i].name.replace(' ','')
+    imgName=imgName.replace('.000','k')
     if (product[i].type==select&&(product[i].name.lastIndexOf(searchInputText)!=-1||product[i].realValue.lastIndexOf(searchInputText)!=-1)){
         product1.push(product[i])
         inCart.push(i)
@@ -55,6 +57,7 @@ else{
     searchInput1.innerText+="   "+searchInputText
     for (let i=0;i<product.length;i++){
     var imgName=product[i].name.replace(' ','')
+    imgName=imgName.replace('.000','k')
     if ((product[i].name.lastIndexOf(searchInputText)!=-1||product[i].realValue.lastIndexOf(searchInputText)!=-1)){
         product1.push(product[i])
         inCart.push(i)
