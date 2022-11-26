@@ -28,22 +28,21 @@
                     <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
                         <li class="nav-item">
                             <form class="d-flex me-lg-3">
-                                <input class="form-control me-2" id="search-input" type="text" placeholder="Tìm kiếm">
+                                <input class="form-control me-2" id="search-input" type="text" placeholder="Tìm kiếm" size="5px;">
                                 <select class="form-select form-select-sm" id="select-bottom" style="width: 200px;margin-right: 14px;" aria-label=".form-select-sm example">
                                     <option value="0" selected="selected">Danh mục</option>
                                     <option value="1">Viettel</option>
                                     <option value="2">Vinaphone</option>
                                     <option value="3">Mobifone</option>
                                     <option value="4">Vietnamobile</option>
-                                    <!-- <option value="5">Dưới 100k</option>
-                                    <option value="6">100k-200k</option>
-                                    <option value="7">Trên 200k</option> -->
                                 </select>
-                                <select class="form-select form-select-sm" style="width: 150px;margin-right: 14px;" aria-label=".form-select-sm example">
-                                    <option value="0" selected="selected">Khoảng giá</option>
-                                    <!-- <option value="5">Dưới 100k</option>
-                                    <option value="6">100k-200k</option>
-                                    <option value="7">Trên 200k</option> -->
+                                <p style="min-width:90px;margin-bottom: 0px;margin-top: 9px;">Khoảng giá:</p>
+                                <select class="form-select form-select-sm" style="width: 120px;margin-right: 14px;" aria-label=".form-select-sm example">
+                                    <option value="0" selected="selected">10.000đ</option>
+                                </select>
+                                <p style="min-width:40px;margin-bottom: 0px;margin-top: 9px;">Đến</p>
+                                <select class="form-select form-select-sm" style="width: 120px;margin-right: 14px;" aria-label=".form-select-sm example">
+                                    <option value="0" selected="selected">500.000đ</option>
                                 </select>
                                 <button class="btn btn-primary" id="search-icon" type="button">
                                     <i class="ti-search"></i>
@@ -60,12 +59,6 @@
                         <!-- <li class="nav-item header-account"><a class="nav-link me-lg-3" href="./Register.html"><i class="ri-edit-2-line"></i> Đăng Ký</a></li> -->
                         <li class="nav-item header-login"><a class="nav-link me-lg-3" href="./login.html"><i class="ri-login-box-line"></i> Đăng Nhập/Đăng Ký</a></li>
                     </ul>
-                    <button class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" data-bs-toggle="modal" data-bs-target="#feedbackModal">
-                        <span class="d-flex align-items-center">
-                            <i class="ri-chat-3-fill me-2"></i>
-                            <span class="small">Gửi phản hồi</span>
-                        </span>
-                    </button>
                 </div>
             </div>
         </nav>

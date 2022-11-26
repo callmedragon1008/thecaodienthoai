@@ -8,7 +8,7 @@ let productList=document.getElementById("product-list")
 let searchInput1=document.getElementById('search-input-display')
 let product1=[]
 let inCart=[]
-
+let temp=0
 if (select!='Danh mục'){
     searchInput1.innerText+="   "+searchInputText+','+select
     for (let i=0;i<product.length;i++){
@@ -50,6 +50,8 @@ if (select!='Danh mục'){
                     </div>
                     </div>      
                 `
+        temp++;
+        if (temp==7) break;
 }
     }
 }
@@ -61,7 +63,8 @@ else{
     if ((product[i].name.lastIndexOf(searchInputText)!=-1||product[i].realValue.lastIndexOf(searchInputText)!=-1)){
         product1.push(product[i])
         inCart.push(i)
-
+        temp++;
+        if (temp==7) break;
         if (product[i].realValue!=product[i].cost)
             productList.innerHTML += `
                 <div class="col-lg-3 m-5">
@@ -97,6 +100,9 @@ else{
                 `
     }
 }
+}
+if (temp==7){
+    
 }
 
 // modal

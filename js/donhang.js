@@ -77,7 +77,7 @@ for (let i=1;i<=countOrder;i++){
                 <div class="middle-container mb-3 collapse nav flex-column ms-1 order-submenu-${i}" id="content-submenu-${i}" data-bs-parent="#menu">
                     <div class="row">
                         <div class="col-md-3">
-                            <h5>Chưa thanh toán</h5>
+                            <input type="checkbox" value="Chưa thanh toán">Chưa thanh toán
                         </div>
 
                         <div class="col-md-3">
@@ -131,12 +131,6 @@ for (let i=1;i<=countOrder;i++){
             </div>
         </div>
 
-        <div class="row"
-            <div class="col-7"></div>
-            <div class="col-3 align-self-end">
-                <button class="btn  btn-primary">Thanh Toán Đơn Hàng</button>
-            </div>
-        </div>
         `
     }
 
