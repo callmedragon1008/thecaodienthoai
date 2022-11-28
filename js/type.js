@@ -41,8 +41,8 @@ for (let i=0;i<product1.length;i++){
                 </button>
                 <div class="card-body" >
                     <h4 class="card-title">${product1[i].name} <i class="ri-fire-fill text-danger" style="float:right" ></i></h4>
-                    <p class="card-text" style="text-decoration-line: line-through"> ${parseInt(product1[i].realValue).toLocaleString()}</p>
-                    <h5 class="card-title text-danger reduce-cost">${parseInt(product1[i].cost).toLocaleString()}</h5>
+                    <p class="card-text" style="text-decoration-line: line-through"> ${parseInt(product1[i].realValue).toLocaleString()}đ</p>
+                    <h5 class="card-title text-danger reduce-cost">${parseInt(product1[i].cost).toLocaleString()}đ</h5>
                     <a class="add-cart cart 1 btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
                     <a class="btn btn-danger text-light pay-button" style="float:right" data-bs-toggle="modal" data-bs-target="#myModal-pay"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
                 </div>
@@ -58,7 +58,7 @@ for (let i=0;i<product1.length;i++){
                     </button>
                     <div class="card-body" >
                         <h4 class="card-title" style="min-height:70px;">${product1[i].name}</h4>
-                        <h5 class="card-title text-danger reduce-cost">${parseInt(product1[i].cost).toLocaleString()}</h5>
+                        <h5 class="card-title text-danger reduce-cost">${parseInt(product1[i].cost).toLocaleString()}đ</h5>
                         <a class="add-cart cart 1 btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
                         <a class="btn btn-danger text-light pay-button" style="float:right" data-bs-toggle="modal" data-bs-target="#myModal-pay"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
                     </div>
@@ -84,7 +84,7 @@ let status1=localStorage.getItem('status')
 for (let i=0;i<btnModals.length;i++){
   btnModals[i].addEventListener('click',function(){
     document.getElementById("modal-name").innerText=product[inType[i]].name
-    document.getElementById("modal-text").innerHTML='Mệnh giá: '+product[inType[i]].realValue+'<br/>'+'Loại thẻ: '+product[inType[i]].type+'<br/>'+'Giá: '+product[inType[i]].cost;  
+    document.getElementById("modal-text").innerHTML='Mệnh giá: '+parseInt(product[inType[i]].realValue).toLocaleString()+'đ<br/>'+'Loại thẻ: '+product[inType[i]].type+'<br/>'+'Giá: '+parseInt(product[inType[i]].cost).toLocaleString()+'đ';  
     var btnCart=document.querySelector('.btn-cart')
     btnCart.addEventListener('click',function(){
         console.log(numberCart)

@@ -229,7 +229,7 @@ let status1=localStorage.getItem('status')
 for (let i=0;i<btnModals.length;i++){
   btnModals[i].addEventListener('click',function(){
     document.getElementById("modal-name").innerText=product[i+(pageNumber-1)*6].name
-    document.getElementById("modal-text").innerHTML='Mệnh giá: '+product[i+(pageNumber-1)*6].realValue+'<br/>'+'Loại thẻ: '+product[i+(pageNumber-1)*6].type+'<br/>'+'Giá: '+product[i+(pageNumber-1)*6].cost;  
+    document.getElementById("modal-text").innerHTML='Mệnh giá: '+parseInt(product[i+(pageNumber-1)*6].realValue).toLocaleString()+'đ<br/>'+'Loại thẻ: '+product[i+(pageNumber-1)*6].type+'<br/>'+'Giá: '+parseInt(product[i+(pageNumber-1)*6].cost).toLocaleString()+"đ";  
     var btnCart=document.querySelector('.btn-cart')
     btnCart.addEventListener('click',function(){
         product[i+(pageNumber-1)*6].inCart++;
