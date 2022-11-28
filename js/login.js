@@ -13,16 +13,16 @@ btnLogin.addEventListener('click', (e) => {
   console.log(user);
   let json = JSON.stringify(user);
   if (!username.value || !password.value) {
-    alert("vui long nhap day du thong tin");
+    alert("Vui lòng nhập đầy đủ thông tin");
   }
   else{
     if (username.value=="admin"&&password.value=="123"){
-      alert("Xin chao admin");
+      alert("Xin chào admin đẹp trai:)");
       window.location.href = "admin.html"
     }
     else
       if (localStorage.getItem(username.value) == json) {
-        alert("Dang nhap thanh cong")
+        alert("Đăng nhập thành công")
         for (let i=0;i<product.length;i++){
           product[i].inCart=0
       }
@@ -34,7 +34,7 @@ btnLogin.addEventListener('click', (e) => {
         window.location.href = "index.html";
       
       } else {
-        alert("Dang nhap that bai");
+        alert("Đăng nhập thất bại");
       }
     }
 });
