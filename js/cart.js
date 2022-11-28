@@ -195,3 +195,10 @@ let headerLogo=document.querySelector('.header-logo')
 headerLogo.addEventListener('click',function(){
     localStorage.setItem('pageNumber',1)
 })
+
+// Đơn hàng đã đặt
+let cartBtn=document.querySelector('#cart-1')
+cart.addEventListener('click',function(){
+    if (status1!=1)
+        alert("Đăng nhập rồi cho xem -.-")
+})

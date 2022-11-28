@@ -91,6 +91,7 @@ btnConfirm.addEventListener('click',function(){
         imgLink.push(imgLink1)
         json=JSON.stringify(imgLink)
         localStorage.setItem('imgLink',json)
+        alert("Đã thêm sản phẩm")
         window.location.href="addProduct.html"
     }
 })

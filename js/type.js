@@ -20,25 +20,26 @@ let product1=[]
 let inType=[]
 let imgLink=JSON.parse(json)
 let type=location.pathname.slice(1,location.pathname.indexOf('.'))
+let imgLink1=[]
 type=type[0].toUpperCase()+type.slice(1)
 for (let i=0;i<product.length;i++)
     if (product[i].type==type){
         inType.push(i)
         product1.push(product[i])
+        imgLink1.push(imgLink[i])
     }
 // for (let i=0;i<product1.length;i++){
 //         temp=product1[i].name.replace(' ','')
 //         temp=temp.replace('.000','k')
 //         imgLink.push('./asset/image/'+temp+'.png')
 //     }
-for (let i=0;i<product1.length;i++){
-    var imgName=product1[i].name.replace(' ','')
+for (let i=0;i<6;i++){
     if (product1[i].realValue!=product1[i].cost)
         cardList.innerHTML += `
             <div class="col-lg-3 m-5">
             <div class="card">
                 <button class="m-0 p-0 btn btn-primary btn-modal" style="border: none;background: none;" type="button" data-bs-toggle="modal" data-bs-target="#myModal">
-                    <img class="card-img-top" src="${imgLink[i]}" alt="Card image">
+                    <img class="card-img-top" src="${imgLink1[i]}" alt="Card image">
                 </button>
                 <div class="card-body" >
                     <h4 class="card-title">${product1[i].name} <i class="ri-fire-fill text-danger" style="float:right" ></i></h4>
@@ -55,7 +56,7 @@ for (let i=0;i<product1.length;i++){
                 <div class="col-lg-3 m-5">
                 <div class="card">
                     <button class="m-0 p-0 btn btn-primary btn-modal" style="border: none;background: none;" type="button" data-bs-toggle="modal" data-bs-target="#myModal">
-                        <img class="card-img-top" src="${imgLink[i]}" alt="Card image">
+                        <img class="card-img-top" src="${imgLink1[i]}" alt="Card image">
                     </button>
                     <div class="card-body" >
                         <h4 class="card-title" style="min-height:70px;">${product1[i].name}</h4>
@@ -67,7 +68,16 @@ for (let i=0;i<product1.length;i++){
                 </div>      
             `
 }
-
+document.getElementById('paging').innerHTML=`
+    <ul class="pagination">
+        <li class="page-item"><a class="page-link page-before" href="./search.html"><i class="ti-angle-left" style="font-size:12px;"></i></a></li>
+        <li class="page-item page-index"><a class="page-link" href="./search.html">1</a></li>
+        <li class="page-item page-index"><a class="page-link" href="./search.html">2</a></li>
+        <li class="page-item page-index"><a class="page-link" href="./search.html">3</a></li>
+        <li class="page-item page-index"><a class="page-link" href="./search.html">4</a></li>
+        <li class="page-item"><a class="page-link page-before" href="./search.html"><i class="ti-angle-right" style="font-size:12px;"></i></a></li>
+    </ul>
+    `
 
 let headerLogo=document.querySelector('.header-logo')
 headerLogo.addEventListener('click',function(){

@@ -47,8 +47,11 @@ for (let i=0;i<deleteBtn.length;i++){
         let confirmBtn=document.querySelector('.confirm-button')
         confirmBtn.addEventListener('click',function(){
             product.splice(i,1)
+            imgLink.splice(i,1)
             json=JSON.stringify(product)
             localStorage.setItem('product',json)
+            json=JSON.stringify(imgLink)
+            localStorage.setItem('imgLink',json)
             window.location.href='productList.html'
         })
     })
@@ -64,8 +67,8 @@ for (let i=0;i<editBtn.length;i++){
         document.getElementById('inputPrice').value=product[i].cost
         imgLink1=imgLink[i]
         for (var j = 0; j < gridRadios.length; j++){
-            if (gridRadios[i].value == product[i].type){
-                gridRadios[i].checked = true;
+            if (gridRadios[j].value == product[j].type){
+                gridRadios[j].checked = true;
             }
         }
   
