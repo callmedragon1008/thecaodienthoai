@@ -14,10 +14,11 @@ document.querySelector('.cart span').innerText = numberCart;
 
 let json=localStorage.getItem('product')
 product=JSON.parse(json)
+json=localStorage.getItem('imgLink')
 let cardList=document.getElementById("card-list")
 let product1=[]
 let inType=[]
-let imgLink=[]
+let imgLink=JSON.parse(json)
 let type=location.pathname.slice(1,location.pathname.indexOf('.'))
 type=type[0].toUpperCase()+type.slice(1)
 for (let i=0;i<product.length;i++)
@@ -25,11 +26,11 @@ for (let i=0;i<product.length;i++)
         inType.push(i)
         product1.push(product[i])
     }
-for (let i=0;i<product1.length;i++){
-        temp=product1[i].name.replace(' ','')
-        temp=temp.replace('.000','k')
-        imgLink.push('./asset/image/'+temp+'.png')
-    }
+// for (let i=0;i<product1.length;i++){
+//         temp=product1[i].name.replace(' ','')
+//         temp=temp.replace('.000','k')
+//         imgLink.push('./asset/image/'+temp+'.png')
+//     }
 for (let i=0;i<product1.length;i++){
     var imgName=product1[i].name.replace(' ','')
     if (product1[i].realValue!=product1[i].cost)
