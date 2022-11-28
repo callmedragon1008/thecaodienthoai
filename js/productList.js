@@ -73,7 +73,7 @@ for (let i=0;i<editBtn.length;i++){
             newProduct.innerHTML = `
                 <div class="col-lg-3 m-5">
                 <div class="card">
-                    <button class="m-0 p-0 btn btn-primary btn-modal" style="border: none;background: none;" type="button" data-bs-toggle="modal" data-bs-target="#myModal">
+                    <button class="btn btn-primary btn-modal" style="border: none;background: none;">
                         <img class="card-img-top" src="${imgLink1}" alt="Card image">
                     </button>
                     <div class="card-body" >
@@ -91,7 +91,7 @@ for (let i=0;i<editBtn.length;i++){
             newProduct.innerHTML = `
                     <div class="col-lg-3 m-5">
                     <div class="card">
-                        <button class="m-0 p-0 btn btn-primary btn-modal" style="border: none;background: none;" type="button" data-bs-toggle="modal" data-bs-target="#myModal">
+                        <button class="btn btn-primary btn-modal" style="border: none;background: none;">
                             <img class="card-img-top" src="${imgLink1}" alt="Card image">
                         </button>
                         <div class="card-body" >
@@ -158,9 +158,9 @@ btnCheck.addEventListener('click',function(){
             imgLink1=img.src
         if (inputParValue.value!=inputPrice.value){
             newProduct.innerHTML = `
-                <div class="col-lg-3 m-5">
+                <div class="col-lg-3 m-5" style="min-width:400px;">
                 <div class="card">
-                    <button class="m-0 p-0 btn btn-primary btn-modal" style="border: none;background: none;" type="button" data-bs-toggle="modal" data-bs-target="#myModal">
+                    <button class="btn btn-primary btn-modal" style="border: none;background: none;">
                         <img class="card-img-top" src="${imgLink1}" alt="Card image">
                     </button>
                     <div class="card-body" >
@@ -168,7 +168,7 @@ btnCheck.addEventListener('click',function(){
                         <p class="card-text" style="text-decoration-line: line-through"> ${parseInt(inputParValue.value).toLocaleString()}đ</p>
                         <h5 class="card-title text-danger reduce-cost">${parseInt(inputPrice.value).toLocaleString()}đ</h5>
                         <a class="add-cart cart 1 btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
-                        <a class="btn btn-danger text-light pay-button" style="float:right" data-bs-toggle="modal" data-bs-target="#myModal-pay"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
+                        <a class="btn btn-danger text-light pay-button" style="float:right"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
                     </div>
                 </div>
                 </div>      
@@ -176,16 +176,16 @@ btnCheck.addEventListener('click',function(){
         }
         else
             newProduct.innerHTML = `
-                    <div class="col-lg-3 m-5">
+                    <div class="col-lg-3 m-5" style="min-width:400px;">
                     <div class="card">
-                        <button class="m-0 p-0 btn btn-primary btn-modal" style="border: none;background: none;" type="button" data-bs-toggle="modal" data-bs-target="#myModal">
+                        <button class="btn btn-primary btn-modal" style="border: none;background: none;min-width:400px;">
                             <img class="card-img-top" src="${imgLink1}" alt="Card image">
                         </button>
                         <div class="card-body" >
                             <h4 class="card-title" style="min-height:70px;">${inputName.value}</h4>
                             <h5 class="card-title text-danger reduce-cost">${parseInt(inputPrice.value).toLocaleString()}</h5>
                             <a class="add-cart cart 1 btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
-                            <a class="btn btn-danger text-light pay-button" style="float:right" data-bs-toggle="modal" data-bs-target="#myModal-pay"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
+                            <a class="btn btn-danger text-light pay-button" style="float:right"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
                         </div>
                     </div>
                     </div>      
