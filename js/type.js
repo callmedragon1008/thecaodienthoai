@@ -70,12 +70,12 @@ for (let i=0;i<6;i++){
 }
 document.getElementById('paging').innerHTML=`
     <ul class="pagination">
-        <li class="page-item"><a class="page-link page-before" href="./search.html"><i class="ti-angle-left" style="font-size:12px;"></i></a></li>
-        <li class="page-item page-index"><a class="page-link" href="./search.html">1</a></li>
-        <li class="page-item page-index"><a class="page-link" href="./search.html">2</a></li>
-        <li class="page-item page-index"><a class="page-link" href="./search.html">3</a></li>
-        <li class="page-item page-index"><a class="page-link" href="./search.html">4</a></li>
-        <li class="page-item"><a class="page-link page-before" href="./search.html"><i class="ti-angle-right" style="font-size:12px;"></i></a></li>
+        <li class="page-item"><a class="page-link page-before" href="./${type}.html"><i class="ti-angle-left" style="font-size:12px;"></i></a></li>
+        <li class="page-item page-index"><a class="page-link" href="./${type}.html">1</a></li>
+        <li class="page-item page-index"><a class="page-link" href="./${type}.html">2</a></li>
+        <li class="page-item page-index"><a class="page-link" href="./${type}.html">3</a></li>
+        <li class="page-item page-index"><a class="page-link" href="./${type}.html">4</a></li>
+        <li class="page-item"><a class="page-link page-before" href="./${type}.html"><i class="ti-angle-right" style="font-size:12px;"></i></a></li>
     </ul>
     `
 
