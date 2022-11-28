@@ -115,6 +115,18 @@ if (indexMax==2) bestSeller='Vinaphone'
 if (indexMax==3) bestSeller='VietNamobile'
 
 adminContent.innerHTML=`
+    <div class="row">
+        <div class="col-2">
+            <h3 style="text-align: left;">Từ ngày:</h3>
+            <input type="date" name="bday">
+        </div>
+        <div class="col-2">
+            <h3>Đến ngày:</h3>
+            <input type="date" value="kday">
+            <input type="submit" value="Xác nhận">
+        </div>
+    </div>
+    <br>
     <div class="row" id="row-1">
         <div class="col-4">
             <h3>Thống kê tình hình kinh doanh</h3>
