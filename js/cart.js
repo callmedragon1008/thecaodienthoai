@@ -198,7 +198,4 @@ headerLogo.addEventListener('click',function(){
 
 // Đơn hàng đã đặt
 let cartBtn=document.querySelector('#cart-1')
-cart.addEventListener('click',function(){
-    if (status1!=1)
-        alert("Đăng nhập rồi cho xem -.-")
-})
+if (status1!=1) cartBtn.href="shopping-cart.html"
