@@ -140,21 +140,21 @@ pageNumber=parseInt(pageNumber)
 localStorage.setItem('pageNumber',pageNumber)
 let cardList=document.getElementById("card-list")
 let a=product.length-6*(pageNumber-1);
-if (a>6) a=6
+if (a>8) a=8
 for (let i=0;i<a;i++){
-    if (product[i+(pageNumber-1)*6].realValue!=product[i+(pageNumber-1)*6].cost){
+    if (product[i+(pageNumber-1)*6].realValue!=product[i+(pageNumber-1)*8].cost){
         cardList.innerHTML += `
-            <div class="col-lg-3 m-5">
-            <div class="card">
+            <div class="col-lg-2 m-5">
+            <div class="card" style=" min-width: 300px">
                 <button class="m-0 p-0 btn btn-primary btn-modal" style="border: none;background: none;" type="button" data-bs-toggle="modal" data-bs-target="#myModal">
-                    <img class="card-img-top" src="${imgLink[i+(pageNumber-1)*6]}" alt="Card image">
+                    <img class="card-img-top" src="${imgLink[i+(pageNumber-1)*8]}" alt="Card image">
                 </button>
                 <div class="card-body" >
-                    <h4 class="card-title">${product[i+(pageNumber-1)*6].name} <i class="ri-fire-fill text-danger" style="float:right" ></i></h4>
-                    <p class="card-text" style="text-decoration-line: line-through"> ${parseInt(product[i+(pageNumber-1)*6].realValue).toLocaleString()}đ</p>
-                    <h5 class="card-title text-danger reduce-cost">${parseInt(product[i+(pageNumber-1)*6].cost).toLocaleString()}đ</h5>
+                    <h4 class="card-title">${product[i+(pageNumber-1)*8].name} <i class="ri-fire-fill text-danger" style="float:right" ></i></h4>
+                    <p class="card-text" style="text-decoration-line: line-through"> ${parseInt(product[i+(pageNumber-1)*8].realValue).toLocaleString()}đ</p>
+                    <h5 class="card-title text-danger reduce-cost">${parseInt(product[i+(pageNumber-1)*8].cost).toLocaleString()}đ</h5>
                     <a class="add-cart cart 1 btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
-                    <a class="btn btn-danger text-light pay-button" style="float:right" data-bs-toggle="modal" data-bs-target="#myModal-pay"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
+                    <a class="btn btn-danger text-light pay-button" style="float:right" data-bs-toggle="modal" data-bs-target="#myModal-pay">Mua ngay</a>
                 </div>
             </div>
             </div>      
@@ -162,16 +162,16 @@ for (let i=0;i<a;i++){
     }
     else
         cardList.innerHTML += `
-                <div class="col-lg-3 m-5">
-                <div class="card">
-                    <button class="m-0 p-0 btn btn-primary btn-modal" style="border: none;background: none;" type="button" data-bs-toggle="modal" data-bs-target="#myModal">
-                        <img class="card-img-top" src="${imgLink[i+(pageNumber-1)*6]}" alt="Card image">
+                <div class="col-lg-2 m-5">
+                <div class="card" style=" min-width: 300px">
+                    <button class="m-0 p-0 btn btn-primary btn-modal" style="border: none;background: none; min-width: px" type="button" data-bs-toggle="modal" data-bs-target="#myModal">
+                        <img class="card-img-top" src="${imgLink[i+(pageNumber-1)*8]}" alt="Card image">
                     </button>
                     <div class="card-body" >
-                        <h4 class="card-title" style="min-height:70px;">${product[i+(pageNumber-1)*6].name}</h4>
-                        <h5 class="card-title text-danger reduce-cost">${parseInt(product[i+(pageNumber-1)*6].cost).toLocaleString()}đ</h5>
+                        <h4 class="card-title" style="min-height:70px;">${product[i+(pageNumber-1)*8].name}</h4>
+                        <h5 class="card-title text-danger reduce-cost">${parseInt(product[i+(pageNumber-1)*8].cost).toLocaleString()}đ</h5>
                         <a class="add-cart cart 1 btn btn-primary text-light"><i class="ri-shopping-cart-2-fill"></i></a>
-                        <a class="btn btn-danger text-light pay-button" style="float:right" data-bs-toggle="modal" data-bs-target="#myModal-pay"><i class="ri-shopping-bag-fill"></i>Mua ngay</a>
+                        <a class="btn btn-danger text-light pay-button" style="float:right" data-bs-toggle="modal" data-bs-target="#myModal-pay">Mua ngay</a>
                     </div>
                 </div>
                 </div>      
