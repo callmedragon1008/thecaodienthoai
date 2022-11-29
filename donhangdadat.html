@@ -36,10 +36,7 @@
                                 <i class="ti-shopping-cart"></i> Shopping Cart (<span>0</span>)
                             </a>
                         </li>
-                        <li class="nav-item header-user-name disappear"></li>
-                        <!-- <li class="nav-item header-log-out disappear"><a class="nav-link me-lg-3" href="./index.html"><i class="ri-login-box-line"></i> Đăng xuất</a></li> -->
-                        <!-- <li class="nav-item header-account"><a class="nav-link me-lg-3" href="./Register.html"><i class="ri-edit-2-line"></i> Đăng Ký</a></li> -->
-                        <!-- <li class="nav-item header-login"><a class="nav-link me-lg-3" href="./login.html"><i class="ri-login-box-line"></i> Đăng Nhập/Đăng Ký</a></li> -->
+                        <li class="nav-item" id="header-user-name"></li>
                     </ul>
                     <button class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" data-bs-toggle="modal" data-bs-target="#feedbackModal">
                         <span class="d-flex align-items-center">
@@ -58,7 +55,8 @@
             </div>
             <hr>
             <div style="text-align: left;">
-                <h4>Đơn hàng 1 </h4>
+                <h4>Đơn hàng 1 , Số điện thoại: 0272833728</h4>
+                <br>
             </div>
             <div class="row">
                 <div class="col-1">
@@ -195,4 +193,10 @@
     </div>
     <!-- <script src="./js/main.js"></script> -->
     <!-- <script src="./js/cart.js"></script> -->
+    <script>
+        let name=localStorage.getItem('username1')
+        document.getElementById('header-user-name').innerHTML=`
+        <a class="nav-link me-lg-3" href=""><i class="ti-user"></i> ${name}</a></li>
+        `
+    </script>
 </body>
